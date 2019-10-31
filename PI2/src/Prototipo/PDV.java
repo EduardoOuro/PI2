@@ -29,7 +29,7 @@ public class PDV extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        BtnNovaVenda = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuConfig = new javax.swing.JMenu();
         MenuCliente = new javax.swing.JMenu();
@@ -44,7 +44,7 @@ public class PDV extends javax.swing.JFrame {
         BtnNovoFunc = new javax.swing.JMenuItem();
         BtnAtualizarFunc = new javax.swing.JMenuItem();
         BtnExcluirFunc = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        MenuCons = new javax.swing.JMenu();
         MenuConsultaCli = new javax.swing.JMenu();
         BtnConsPCodCli = new javax.swing.JMenuItem();
         BtnConsPNomeCli = new javax.swing.JMenuItem();
@@ -67,10 +67,10 @@ public class PDV extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/LOGO PI2 250.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
-        jButton1.setText("NOVA VENDA");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtnNovaVenda.setText("NOVA VENDA");
+        BtnNovaVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnNovaVendaActionPerformed(evt);
             }
         });
 
@@ -80,7 +80,7 @@ public class PDV extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnNovaVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
@@ -91,7 +91,7 @@ public class PDV extends javax.swing.JFrame {
                 .addGap(92, 92, 92)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtnNovaVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
 
@@ -158,7 +158,7 @@ public class PDV extends javax.swing.JFrame {
 
         jMenuBar1.add(MenuConfig);
 
-        jMenu1.setText("Cosultar");
+        MenuCons.setText("Cosultar");
 
         MenuConsultaCli.setText("ConsultarCliente");
 
@@ -178,7 +178,7 @@ public class PDV extends javax.swing.JFrame {
         });
         MenuConsultaCli.add(BtnConsPNomeCli);
 
-        jMenu1.add(MenuConsultaCli);
+        MenuCons.add(MenuConsultaCli);
 
         MenuConsultaProd.setText("ConsultarProduto");
 
@@ -188,7 +188,7 @@ public class PDV extends javax.swing.JFrame {
         BtnConsPNomeProd.setText("PeloNome");
         MenuConsultaProd.add(BtnConsPNomeProd);
 
-        jMenu1.add(MenuConsultaProd);
+        MenuCons.add(MenuConsultaProd);
 
         MenuConsultaFunc.setText("ConsultarFuncionario");
 
@@ -198,7 +198,7 @@ public class PDV extends javax.swing.JFrame {
         BtnConsPNomeFunc.setText("PeloNome");
         MenuConsultaFunc.add(BtnConsPNomeFunc);
 
-        jMenu1.add(MenuConsultaFunc);
+        MenuCons.add(MenuConsultaFunc);
 
         MenuRelatorioVendas.setText("RelatorioDeVendas");
 
@@ -208,9 +208,9 @@ public class PDV extends javax.swing.JFrame {
         BtnConsPNumNF.setText("PeloNumeroNF");
         MenuRelatorioVendas.add(BtnConsPNumNF);
 
-        jMenu1.add(MenuRelatorioVendas);
+        MenuCons.add(MenuRelatorioVendas);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(MenuCons);
 
         MenuSair.setText("Sair");
 
@@ -271,9 +271,9 @@ public class PDV extends javax.swing.JFrame {
         new Tela_Inicial().setVisible(true);
     }//GEN-LAST:event_MMenuSairActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtnNovaVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovaVendaActionPerformed
         new PDV_VENDA().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BtnNovaVendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,12 +324,14 @@ public class PDV extends javax.swing.JFrame {
     private javax.swing.JMenuItem BtnConsPPerioRV;
     private javax.swing.JMenuItem BtnExcluirFunc;
     private javax.swing.JMenuItem BtnExcluirProd;
+    private javax.swing.JButton BtnNovaVenda;
     private javax.swing.JMenuItem BtnNovoCli;
     private javax.swing.JMenuItem BtnNovoFunc;
     private javax.swing.JMenuItem BtnNovoProd;
     private javax.swing.JMenuItem MMenuSair;
     private javax.swing.JMenu MenuCliente;
     private javax.swing.JMenu MenuConfig;
+    private javax.swing.JMenu MenuCons;
     private javax.swing.JMenu MenuConsultaCli;
     private javax.swing.JMenu MenuConsultaFunc;
     private javax.swing.JMenu MenuConsultaProd;
@@ -338,9 +340,7 @@ public class PDV extends javax.swing.JFrame {
     private javax.swing.JMenu MenuRelatorioVendas;
     private javax.swing.JMenu MenuSair;
     private javax.swing.JMenuItem btnExluirCli;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

@@ -89,7 +89,7 @@
             </Menu>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="MenuCons">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cosultar"/>
           </Properties>
@@ -236,7 +236,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="248" max="-2" attributes="0"/>
+                  <Component id="BtnNovaVenda" min="-2" pref="248" max="-2" attributes="0"/>
                   <EmptySpace pref="77" max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="254" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
@@ -249,7 +249,7 @@
                   <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" pref="229" max="-2" attributes="0"/>
-                      <Component id="jButton1" alignment="3" min="-2" pref="136" max="-2" attributes="0"/>
+                      <Component id="BtnNovaVenda" alignment="3" min="-2" pref="136" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="81" max="32767" attributes="0"/>
               </Group>
@@ -265,12 +265,12 @@
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="BtnNovaVenda">
           <Properties>
             <Property name="text" type="java.lang.String" value="NOVA VENDA"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnNovaVendaActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
