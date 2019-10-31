@@ -35,15 +35,12 @@ public class PDV extends javax.swing.JFrame {
         MenuCliente = new javax.swing.JMenu();
         BtnNovoCli = new javax.swing.JMenuItem();
         BtnAtualizarDCli = new javax.swing.JMenuItem();
-        btnExluirCli = new javax.swing.JMenuItem();
         MenuProd = new javax.swing.JMenu();
         BtnNovoProd = new javax.swing.JMenuItem();
         BtnAtualizarProd = new javax.swing.JMenuItem();
-        BtnExcluirProd = new javax.swing.JMenuItem();
         MenuFuncionario = new javax.swing.JMenu();
         BtnNovoFunc = new javax.swing.JMenuItem();
         BtnAtualizarFunc = new javax.swing.JMenuItem();
-        BtnExcluirFunc = new javax.swing.JMenuItem();
         MenuCons = new javax.swing.JMenu();
         MenuConsultaCli = new javax.swing.JMenu();
         BtnConsPCodCli = new javax.swing.JMenuItem();
@@ -60,14 +57,16 @@ public class PDV extends javax.swing.JFrame {
         MenuSair = new javax.swing.JMenu();
         MMenuSair = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/LOGO PI2 250.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
         BtnNovaVenda.setText("NOVA VENDA");
+        BtnNovaVenda.setBorder(new javax.swing.border.SoftBevelBorder(0));
         BtnNovaVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnNovaVendaActionPerformed(evt);
@@ -78,27 +77,31 @@ public class PDV extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(BtnNovaVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BtnNovaVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(183, 183, 183)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(213, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnNovaVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(81, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(BtnNovaVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77))
         );
 
-        MenuConfig.setText("Configuração");
+        MenuConfig.setText("Cadastros");
 
+        MenuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/cliente.png"))); // NOI18N
         MenuCliente.setText("Cliente");
 
+        BtnNovoCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/novocliente.png"))); // NOI18N
         BtnNovoCli.setText("NovoCliente");
         BtnNovoCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +110,7 @@ public class PDV extends javax.swing.JFrame {
         });
         MenuCliente.add(BtnNovoCli);
 
+        BtnAtualizarDCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/atualizar.png"))); // NOI18N
         BtnAtualizarDCli.setText("AtualizarDadosCliente");
         BtnAtualizarDCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,17 +119,22 @@ public class PDV extends javax.swing.JFrame {
         });
         MenuCliente.add(BtnAtualizarDCli);
 
-        btnExluirCli.setText("ExcluirCliente");
-        MenuCliente.add(btnExluirCli);
-
         MenuConfig.add(MenuCliente);
 
+        MenuProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/novoproduto.png"))); // NOI18N
         MenuProd.setText("Produto");
 
-        BtnNovoProd.setText("NovoProduto");
+        BtnNovoProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/novoproduto.png"))); // NOI18N
+        BtnNovoProd.setText("Novo Produto");
+        BtnNovoProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnNovoProdActionPerformed(evt);
+            }
+        });
         MenuProd.add(BtnNovoProd);
 
-        BtnAtualizarProd.setText("AtualizarProduto");
+        BtnAtualizarProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/atualizar.png"))); // NOI18N
+        BtnAtualizarProd.setText("Atualizar Produto");
         BtnAtualizarProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAtualizarProdActionPerformed(evt);
@@ -133,13 +142,12 @@ public class PDV extends javax.swing.JFrame {
         });
         MenuProd.add(BtnAtualizarProd);
 
-        BtnExcluirProd.setText("ExcluirProduto");
-        MenuProd.add(BtnExcluirProd);
-
         MenuConfig.add(MenuProd);
 
+        MenuFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/funcionario.png"))); // NOI18N
         MenuFuncionario.setText("Funcionário");
 
+        BtnNovoFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/novofun.png"))); // NOI18N
         BtnNovoFunc.setText("NovoFuncionário");
         BtnNovoFunc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,11 +156,14 @@ public class PDV extends javax.swing.JFrame {
         });
         MenuFuncionario.add(BtnNovoFunc);
 
+        BtnAtualizarFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/atualizar.png"))); // NOI18N
         BtnAtualizarFunc.setText("AtualizarFuncionário");
+        BtnAtualizarFunc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAtualizarFuncActionPerformed(evt);
+            }
+        });
         MenuFuncionario.add(BtnAtualizarFunc);
-
-        BtnExcluirFunc.setText("ExcluirFuncionário");
-        MenuFuncionario.add(BtnExcluirFunc);
 
         MenuConfig.add(MenuFuncionario);
 
@@ -160,7 +171,8 @@ public class PDV extends javax.swing.JFrame {
 
         MenuCons.setText("Cosultar");
 
-        MenuConsultaCli.setText("ConsultarCliente");
+        MenuConsultaCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/cclie.png"))); // NOI18N
+        MenuConsultaCli.setText("Consultar Cliente");
 
         BtnConsPCodCli.setText("PeloCódigo");
         BtnConsPCodCli.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +192,8 @@ public class PDV extends javax.swing.JFrame {
 
         MenuCons.add(MenuConsultaCli);
 
-        MenuConsultaProd.setText("ConsultarProduto");
+        MenuConsultaProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/cprod.png"))); // NOI18N
+        MenuConsultaProd.setText("Consultar Produto");
 
         BtnConsPCodProd.setText("PeloCódigo");
         MenuConsultaProd.add(BtnConsPCodProd);
@@ -190,7 +203,8 @@ public class PDV extends javax.swing.JFrame {
 
         MenuCons.add(MenuConsultaProd);
 
-        MenuConsultaFunc.setText("ConsultarFuncionario");
+        MenuConsultaFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/cfun.png"))); // NOI18N
+        MenuConsultaFunc.setText("Consultar Funcionario");
 
         BtnConsPCodFunc.setText("PeloCodigo");
         MenuConsultaFunc.add(BtnConsPCodFunc);
@@ -200,12 +214,12 @@ public class PDV extends javax.swing.JFrame {
 
         MenuCons.add(MenuConsultaFunc);
 
-        MenuRelatorioVendas.setText("RelatorioDeVendas");
+        MenuRelatorioVendas.setText("Relatorio de Vendas");
 
-        BtnConsPPerioRV.setText("PorPeriodo");
+        BtnConsPPerioRV.setText("Por Periodo");
         MenuRelatorioVendas.add(BtnConsPPerioRV);
 
-        BtnConsPNumNF.setText("PeloNumeroNF");
+        BtnConsPNumNF.setText("Pelo Numero NF");
         MenuRelatorioVendas.add(BtnConsPNumNF);
 
         MenuCons.add(MenuRelatorioVendas);
@@ -214,6 +228,8 @@ public class PDV extends javax.swing.JFrame {
 
         MenuSair.setText("Sair");
 
+        MMenuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        MMenuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/exit.png"))); // NOI18N
         MMenuSair.setText("Sair");
         MMenuSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,23 +256,23 @@ public class PDV extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnNovoCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoCliActionPerformed
-        // TODO add your handling code here:
-        new CadastrarCliente().setVisible(true);
+     new CadastrarCliente().setVisible(true);
     }//GEN-LAST:event_BtnNovoCliActionPerformed
 
     private void BtnAtualizarDCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtualizarDCliActionPerformed
-        // TODO add your handling code here:
+      new EditarCliente().setVisible(true);
     }//GEN-LAST:event_BtnAtualizarDCliActionPerformed
 
     private void BtnAtualizarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtualizarProdActionPerformed
-        // TODO add your handling code here:
+        new EditarProd().setVisible(true);
     }//GEN-LAST:event_BtnAtualizarProdActionPerformed
 
     private void BtnNovoFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoFuncActionPerformed
-        // TODO add your handling code here:
+        new CadastrarFuncionários().setVisible(true);
     }//GEN-LAST:event_BtnNovoFuncActionPerformed
 
     private void BtnConsPNomeCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConsPNomeCliActionPerformed
@@ -268,12 +284,21 @@ public class PDV extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnConsPCodCliActionPerformed
 
     private void MMenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MMenuSairActionPerformed
-        new Tela_Inicial().setVisible(true);
+        new Tela_Inicial().setVisible(true); 
     }//GEN-LAST:event_MMenuSairActionPerformed
 
     private void BtnNovaVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovaVendaActionPerformed
         new PDV_VENDA().setVisible(true);
+        
     }//GEN-LAST:event_BtnNovaVendaActionPerformed
+
+    private void BtnNovoProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoProdActionPerformed
+        new CadastrarProd().setVisible(true);
+    }//GEN-LAST:event_BtnNovoProdActionPerformed
+
+    private void BtnAtualizarFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtualizarFuncActionPerformed
+        new EditarFuncionarios().setVisible(true);
+    }//GEN-LAST:event_BtnAtualizarFuncActionPerformed
 
     /**
      * @param args the command line arguments
@@ -322,8 +347,6 @@ public class PDV extends javax.swing.JFrame {
     private javax.swing.JMenuItem BtnConsPNomeProd;
     private javax.swing.JMenuItem BtnConsPNumNF;
     private javax.swing.JMenuItem BtnConsPPerioRV;
-    private javax.swing.JMenuItem BtnExcluirFunc;
-    private javax.swing.JMenuItem BtnExcluirProd;
     private javax.swing.JButton BtnNovaVenda;
     private javax.swing.JMenuItem BtnNovoCli;
     private javax.swing.JMenuItem BtnNovoFunc;
@@ -339,7 +362,6 @@ public class PDV extends javax.swing.JFrame {
     private javax.swing.JMenu MenuProd;
     private javax.swing.JMenu MenuRelatorioVendas;
     private javax.swing.JMenu MenuSair;
-    private javax.swing.JMenuItem btnExluirCli;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
