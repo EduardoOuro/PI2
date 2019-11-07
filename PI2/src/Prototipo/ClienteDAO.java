@@ -20,9 +20,9 @@ public class ClienteDAO {
         System.out.println("Agora lista geral");
         for (int i = 0; i < listaNotas.size(); i++) {
             NotaCliente get = listaNotas.get(i);
-            System.out.println(get.getNumNota());
-            System.out.println(get.getDescricaoNota());
-            System.out.println(get.getValNota());
+//            System.out.println(get.getNumNota());
+//            System.out.println(get.getDescricaoNota());
+//            System.out.println(get.getValNota());
             
         }
         
