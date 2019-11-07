@@ -52,8 +52,8 @@ public class PDV extends javax.swing.JFrame {
         BtnConsPCodFunc = new javax.swing.JMenuItem();
         BtnConsPNomeFunc = new javax.swing.JMenuItem();
         MenuRelatorioVendas = new javax.swing.JMenu();
-        BtnConsPPerioRV = new javax.swing.JMenuItem();
-        BtnConsPNumNF = new javax.swing.JMenuItem();
+        BtnConsAnaliticoRV = new javax.swing.JMenuItem();
+        BtnConsSinteticoRV = new javax.swing.JMenuItem();
         MenuSair = new javax.swing.JMenu();
         MMenuSair = new javax.swing.JMenuItem();
 
@@ -66,7 +66,7 @@ public class PDV extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
 
         BtnNovaVenda.setText("NOVA VENDA");
-        BtnNovaVenda.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        BtnNovaVenda.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         BtnNovaVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnNovaVendaActionPerformed(evt);
@@ -214,13 +214,26 @@ public class PDV extends javax.swing.JFrame {
 
         MenuCons.add(MenuConsultaFunc);
 
+        MenuRelatorioVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/relatório.png"))); // NOI18N
         MenuRelatorioVendas.setText("Relatorio de Vendas");
 
-        BtnConsPPerioRV.setText("Por Periodo");
-        MenuRelatorioVendas.add(BtnConsPPerioRV);
+        BtnConsAnaliticoRV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/relatório.png"))); // NOI18N
+        BtnConsAnaliticoRV.setText("Analítico");
+        BtnConsAnaliticoRV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnConsAnaliticoRVActionPerformed(evt);
+            }
+        });
+        MenuRelatorioVendas.add(BtnConsAnaliticoRV);
 
-        BtnConsPNumNF.setText("Pelo Numero NF");
-        MenuRelatorioVendas.add(BtnConsPNumNF);
+        BtnConsSinteticoRV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prototipo/relatório.png"))); // NOI18N
+        BtnConsSinteticoRV.setText("Sintético");
+        BtnConsSinteticoRV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnConsSinteticoRVActionPerformed(evt);
+            }
+        });
+        MenuRelatorioVendas.add(BtnConsSinteticoRV);
 
         MenuCons.add(MenuRelatorioVendas);
 
@@ -300,6 +313,14 @@ public class PDV extends javax.swing.JFrame {
         new EditarFuncionarios().setVisible(true);
     }//GEN-LAST:event_BtnAtualizarFuncActionPerformed
 
+    private void BtnConsAnaliticoRVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConsAnaliticoRVActionPerformed
+        new RelatorioAnalitico().setVisible(true);
+    }//GEN-LAST:event_BtnConsAnaliticoRVActionPerformed
+
+    private void BtnConsSinteticoRVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConsSinteticoRVActionPerformed
+        new RelatorioSintetico().setVisible(true);
+    }//GEN-LAST:event_BtnConsSinteticoRVActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -339,14 +360,14 @@ public class PDV extends javax.swing.JFrame {
     private javax.swing.JMenuItem BtnAtualizarDCli;
     private javax.swing.JMenuItem BtnAtualizarFunc;
     private javax.swing.JMenuItem BtnAtualizarProd;
+    private javax.swing.JMenuItem BtnConsAnaliticoRV;
     private javax.swing.JMenuItem BtnConsPCodCli;
     private javax.swing.JMenuItem BtnConsPCodFunc;
     private javax.swing.JMenuItem BtnConsPCodProd;
     private javax.swing.JMenuItem BtnConsPNomeCli;
     private javax.swing.JMenuItem BtnConsPNomeFunc;
     private javax.swing.JMenuItem BtnConsPNomeProd;
-    private javax.swing.JMenuItem BtnConsPNumNF;
-    private javax.swing.JMenuItem BtnConsPPerioRV;
+    private javax.swing.JMenuItem BtnConsSinteticoRV;
     private javax.swing.JButton BtnNovaVenda;
     private javax.swing.JMenuItem BtnNovoCli;
     private javax.swing.JMenuItem BtnNovoFunc;
