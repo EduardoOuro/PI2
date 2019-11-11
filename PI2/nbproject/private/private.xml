@@ -2,19 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/luis.eoconrado/Desktop/PI2/PI2/PI2/src/Dao/ClienteDAO.java</file>
-            <file>file:/C:/Users/luis.eoconrado/Desktop/PI2/PI2/PI2/src/Dao/NotaFiscalController.java</file>
-            <file>file:/C:/Users/luis.eoconrado/Desktop/PI2/PI2/PI2/src/Prototipo/PDV.java</file>
-            <file>file:/C:/Users/luis.eoconrado/Desktop/PI2/PI2/PI2/src/Prototipo/Tela_Inicial.java</file>
-            <file>file:/C:/Users/luis.eoconrado/Desktop/PI2/PI2/PI2/src/Dao/FuncionarioDAO.java</file>
-            <file>file:/C:/Users/luis.eoconrado/Desktop/PI2/PI2/PI2/src/Dao/NotaFuncionario.java</file>
-            <file>file:/C:/Users/luis.eoconrado/Desktop/PI2/PI2/PI2/src/Dao/NotaCliente.java</file>
-            <file>file:/C:/Users/luis.eoconrado/Desktop/PI2/PI2/PI2/src/Dao/ProdutoDao.java</file>
-            <file>file:/C:/Users/luis.eoconrado/Desktop/PI2/PI2/PI2/src/Dao/NotaVenda.java</file>
-            <file>file:/C:/Users/luis.eoconrado/Desktop/PI2/PI2/PI2/src/Dao/VendaDAO.java</file>
-            <file>file:/C:/Users/luis.eoconrado/Desktop/PI2/PI2/PI2/src/Dao/NotaProduto.java</file>
-            <file>file:/C:/Users/luis.eoconrado/Desktop/PI2/PI2/PI2/src/Prototipo/CadastrarCliente.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
