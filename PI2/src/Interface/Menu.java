@@ -42,7 +42,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/LOGO PI2 250.png"))); // NOI18N
 
         BtnNovaVenda.setText("NOVA VENDA");
-        BtnNovaVenda.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnNovaVenda.setBorder(new javax.swing.border.SoftBevelBorder(0));
         BtnNovaVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnNovaVendaActionPerformed(evt);

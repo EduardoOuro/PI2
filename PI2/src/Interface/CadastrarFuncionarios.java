@@ -87,10 +87,9 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         campoComplementoF = new javax.swing.JTextField();
         jPanel14 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
         jPanel11.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Cliente", 0, 0, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
         jPanel11.setToolTipText("");
         jPanel11.setName(""); // NOI18N
 
@@ -131,7 +130,7 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         ufCliente6.setText("UF:");
 
         comboUfC6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-        comboUfC6.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        comboUfC6.setBorder(javax.swing.BorderFactory.createEtchedBorder(0));
         comboUfC6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboUfC6ActionPerformed(evt);
@@ -268,7 +267,7 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel13.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Funcionários", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Funcionários", 0, 0, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
         jPanel13.setToolTipText("");
         jPanel13.setName(""); // NOI18N
 
@@ -297,7 +296,7 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         ufFuncionario.setText("UF:");
 
         comboUfF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-        comboUfF.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        comboUfF.setBorder(javax.swing.BorderFactory.createEtchedBorder(0));
         comboUfF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboUfFActionPerformed(evt);
@@ -442,28 +441,19 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/LOGO PI2 250.png"))); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/LOGO PI2 250.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGap(245, 245, 245)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGap(261, 261, 261)
-                        .addComponent(jLabel4)))
-                .addContainerGap(261, Short.MAX_VALUE))
+                .addGap(245, 245, 245)
+                .addComponent(jLabel3)
+                .addContainerGap(527, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addContainerGap(232, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addContainerGap())
         );
@@ -601,7 +591,6 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;

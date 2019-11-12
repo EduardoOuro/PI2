@@ -1,5 +1,7 @@
 package Interface;
 
+import Controller.ClienteTable;
+
 public class TabelaCliente extends javax.swing.JFrame {
 
     public TabelaCliente() {
@@ -24,16 +26,9 @@ public class TabelaCliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Tabela Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(0), "Tabela Cliente", 0, 0, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
 
-        tableNotas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
+        tableNotas.setModel(new ClienteTable());
         jScrollPane1.setViewportView(tableNotas);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

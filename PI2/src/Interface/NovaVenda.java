@@ -26,7 +26,6 @@ public class NovaVenda extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         codigoVenda = new javax.swing.JLabel();
@@ -52,8 +51,6 @@ public class NovaVenda extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 102, 102));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/LOGO PI2 250.png"))); // NOI18N
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/LOGO PI2 250.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -61,9 +58,7 @@ public class NovaVenda extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(217, 217, 217)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(223, 223, 223)
                 .addComponent(jLabel1)
                 .addContainerGap(197, Short.MAX_VALUE))
         );
@@ -71,14 +66,12 @@ public class NovaVenda extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3))
+                .addComponent(jLabel1)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jPanel9.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Venda", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Venda", 0, 0, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
 
         codigoVenda.setText("Código:");
 
@@ -101,7 +94,7 @@ public class NovaVenda extends javax.swing.JFrame {
         });
 
         btnConcluirV.setText("Concluir");
-        btnConcluirV.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnConcluirV.setBorder(new javax.swing.border.SoftBevelBorder(0));
         btnConcluirV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConcluirVActionPerformed(evt);
@@ -316,7 +309,6 @@ public class NovaVenda extends javax.swing.JFrame {
     private javax.swing.JLabel codigoVenda;
     private javax.swing.JLabel dataVenda;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;

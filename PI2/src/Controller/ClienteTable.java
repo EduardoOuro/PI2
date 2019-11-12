@@ -52,7 +52,7 @@ public class ClienteTable extends AbstractTableModel {
             return cadastroCliente.getCidadeCliente();
         }
         if (col == 8) {
-            return cadastroCliente.isUfCliente();
+            return cadastroCliente.getUfCliente();
         }
         return cadastroCliente.getTelefoneCliente();
 

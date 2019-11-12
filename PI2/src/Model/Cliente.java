@@ -9,8 +9,16 @@ public class Cliente {
     int numeroECliente;
     String complementoCliente;
     String cidadeCliente;
-    boolean ufCliente;
+    String ufCliente;
     int telefoneCliente;
+
+    public String getUfCliente() {
+        return ufCliente;
+    }
+
+    public void setUfCliente(String ufCliente) {
+        this.ufCliente = ufCliente;
+    }
 
     public String getNomeCliente() {
         return nomeCliente;
@@ -76,13 +84,7 @@ public class Cliente {
         this.cidadeCliente = cidadeCliente;
     }
 
-    public boolean isUfCliente() {
-        return ufCliente;
-    }
-
-    public void setUfCliente(boolean ufCliente) {
-        this.ufCliente = ufCliente;
-    }
+   
 
     public int getTelefoneCliente() {
         return telefoneCliente;
