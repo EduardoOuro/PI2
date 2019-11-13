@@ -1,5 +1,11 @@
 package Model;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Cliente {
     String nomeCliente;
     int cpfCliente;
@@ -94,4 +100,17 @@ public class Cliente {
         this.telefoneCliente = telefoneCliente;
     }
     
+    public String salvarC (){
+        try{
+            FileWriter fw = new FileWriter("Clientes.txt",true);
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println("Nome:"+this.nomeCliente);
+            pw.println("CPF:"+this.cpfCliente);
+            pw.println("Sexo:"+this.sexoCliente);
+            pw.println("Data de Nascimento:"+this.datanCliente);
+        } catch (IOException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "Cadastrado com Sucesso";
+    }    
 }

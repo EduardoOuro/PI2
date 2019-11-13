@@ -2,16 +2,20 @@ package Interface;
 
 import Controller.ClienteController;
 import Controller.ClienteTable;
+import Model.Cliente;
+import javax.swing.JOptionPane;
 
 public class CadastrarCliente extends javax.swing.JFrame {
 
     private ClienteController controller;
     private ClienteTable tableController;
+    private Cliente clienteModel;
 
     public CadastrarCliente() {
         initComponents();
         controller = new ClienteController();
         tableController = new ClienteTable();
+        clienteModel = new Cliente();
     }
 
     @SuppressWarnings("unchecked")
@@ -24,12 +28,10 @@ public class CadastrarCliente extends javax.swing.JFrame {
         nomeCliente = new javax.swing.JLabel();
         campoNomeCliente = new javax.swing.JTextField();
         cpfCliente = new javax.swing.JLabel();
-        campoCpfCliente = new javax.swing.JTextField();
         sexoCliente = new javax.swing.JLabel();
         btnFemininoC = new javax.swing.JRadioButton();
         btnMasculinoC = new javax.swing.JRadioButton();
         dataNascCliente = new javax.swing.JLabel();
-        campoDataNascC = new javax.swing.JTextField();
         btnSalvarC = new javax.swing.JButton();
         enderecoCliente = new javax.swing.JLabel();
         campoEnderecoC = new javax.swing.JTextField();
@@ -38,12 +40,14 @@ public class CadastrarCliente extends javax.swing.JFrame {
         cidadeCliente = new javax.swing.JLabel();
         ufCliente = new javax.swing.JLabel();
         comboUfC = new javax.swing.JComboBox();
-        campoTelefoneC = new javax.swing.JTextField();
         enderecoCliente3 = new javax.swing.JLabel();
         campoEnderecoC1 = new javax.swing.JTextField();
         enderecoCliente4 = new javax.swing.JLabel();
         campoEnderecoC2 = new javax.swing.JTextField();
         btnBuscarC = new javax.swing.JButton();
+        campoCpfCliente = new javax.swing.JFormattedTextField();
+        campoDataNascC = new javax.swing.JFormattedTextField();
+        campoTelefoneC = new javax.swing.JFormattedTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -69,12 +73,6 @@ public class CadastrarCliente extends javax.swing.JFrame {
         btnMasculinoC.setText("Masculino");
 
         dataNascCliente.setText("Data de Nascimento: ");
-
-        campoDataNascC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoDataNascCActionPerformed(evt);
-            }
-        });
 
         btnSalvarC.setText("Salvar");
         btnSalvarC.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +107,20 @@ public class CadastrarCliente extends javax.swing.JFrame {
                 btnBuscarCActionPerformed(evt);
             }
         });
+
+        try {
+            campoCpfCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        campoDataNascC.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+
+        try {
+            campoTelefoneC.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -150,8 +162,8 @@ public class CadastrarCliente extends javax.swing.JFrame {
                                                 .addComponent(btnMasculinoC)
                                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(campoTelefoneC, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(campoTelefoneC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(enderecoCliente3)
@@ -171,13 +183,13 @@ public class CadastrarCliente extends javax.swing.JFrame {
                             .addComponent(nomeCliente)
                             .addComponent(cpfCliente))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campoNomeCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                            .addComponent(campoCpfCliente))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(campoNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(dataNascCliente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoDataNascC, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoDataNascC, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel5Layout.setVerticalGroup(
@@ -192,9 +204,9 @@ public class CadastrarCliente extends javax.swing.JFrame {
                     .addComponent(btnMasculinoC))
                 .addGap(20, 20, 20)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cpfCliente)
                     .addComponent(dataNascCliente)
+                    .addComponent(campoCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoDataNascC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -308,6 +320,8 @@ public class CadastrarCliente extends javax.swing.JFrame {
 
         controller.salvarCliente(nomeCliente, cpfCliente, sexoCliente, datanCliente, enderecoCliente, numeroECliente,
                 complementoCliente, cidadeCliente, ufCliente, telefoneCliente);
+        
+        JOptionPane.showMessageDialog(null,Cliente.salvarC());
         refreshTable();
 
     }//GEN-LAST:event_btnSalvarCActionPerformed
@@ -319,10 +333,6 @@ public class CadastrarCliente extends javax.swing.JFrame {
     private void btnBuscarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCActionPerformed
         new TabelaCliente().setVisible(true);
     }//GEN-LAST:event_btnBuscarCActionPerformed
-
-    private void campoDataNascCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDataNascCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoDataNascCActionPerformed
     public void refreshTable() {
         jPanel2.invalidate();
         jPanel2.repaint();
@@ -370,13 +380,13 @@ public class CadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvarC;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField campoCidadeCliente;
-    private javax.swing.JTextField campoCpfCliente;
-    private javax.swing.JTextField campoDataNascC;
+    private javax.swing.JFormattedTextField campoCpfCliente;
+    private javax.swing.JFormattedTextField campoDataNascC;
     private javax.swing.JTextField campoEnderecoC;
     private javax.swing.JTextField campoEnderecoC1;
     private javax.swing.JTextField campoEnderecoC2;
     private javax.swing.JTextField campoNomeCliente;
-    private javax.swing.JTextField campoTelefoneC;
+    private javax.swing.JFormattedTextField campoTelefoneC;
     private javax.swing.JLabel cidadeCliente;
     private javax.swing.JComboBox comboUfC;
     private javax.swing.JLabel cpfCliente;

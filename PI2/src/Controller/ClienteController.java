@@ -5,7 +5,7 @@ import Model.Cliente;
 
 public class ClienteController {
 
-    public static boolean salvarCliente(String nomeCliente, int cpfCliente, boolean sexoCliente, 
+    public static boolean salvarCliente(String nomeCliente, int cpfCliente, boolean sexoCliente,
             int datanCliente, String enderecoCliente, int numeroECliente,
             String complementoCliente, String cidadeCliente, String ufCliente, int telefoneCliente) {
         Cliente cadastro = new Cliente();
@@ -26,7 +26,5 @@ public class ClienteController {
         return true;
 
     }
-
-     
 
 }

@@ -52,12 +52,10 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         nomeFuncionario = new javax.swing.JLabel();
         campoNomeFuncionario = new javax.swing.JTextField();
         cpfFuncionario = new javax.swing.JLabel();
-        campoCpfFuncionario = new javax.swing.JTextField();
         sexoFuncionario = new javax.swing.JLabel();
         btnFemininoF = new javax.swing.JRadioButton();
         btnMasculinoF = new javax.swing.JRadioButton();
         dataNascFuncionario = new javax.swing.JLabel();
-        campoDataNascF = new javax.swing.JTextField();
         enderecoFuncionario = new javax.swing.JLabel();
         campoEnderecoF = new javax.swing.JTextField();
         telefoneFuncionario = new javax.swing.JLabel();
@@ -72,6 +70,8 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         complementoFuncionario = new javax.swing.JLabel();
         campoComplementoF = new javax.swing.JTextField();
         btnBuscarF = new javax.swing.JButton();
+        campoCpfFuncionario = new javax.swing.JFormattedTextField();
+        campoDataNascF = new javax.swing.JFormattedTextField();
         jPanel14 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -300,26 +300,33 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
             }
         });
 
+        try {
+            campoCpfFuncionario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        campoDataNascF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel13Layout.createSequentialGroup()
-                            .addComponent(dataNascFuncionario)
-                            .addGap(10, 10, 10)
-                            .addComponent(campoDataNascF, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel13Layout.createSequentialGroup()
-                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(nomeFuncionario)
-                                .addComponent(cpfFuncionario))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(campoNomeFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                                .addComponent(campoCpfFuncionario))))
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(dataNascFuncionario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(campoDataNascF, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nomeFuncionario)
+                            .addComponent(cpfFuncionario))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(campoNomeFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                            .addComponent(campoCpfFuncionario)))
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addComponent(telefoneFuncionario)
                         .addGap(18, 18, 18)
@@ -385,8 +392,8 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
                         .addComponent(enderecoFuncionario)
                         .addComponent(campoEnderecoF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(campoCpfFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cpfFuncionario)))
+                        .addComponent(cpfFuncionario)
+                        .addComponent(campoCpfFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
@@ -403,15 +410,12 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cidadeFuncionario)
                             .addComponent(campoCidadeF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(63, Short.MAX_VALUE))
+                        .addContainerGap(66, Short.MAX_VALUE))
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(campoDataNascF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(dataNascFuncionario)))
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dataNascFuncionario)
+                            .addComponent(campoDataNascF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(telefoneFuncionario)
@@ -459,7 +463,7 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -573,9 +577,9 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
     private javax.swing.JTextField campoCidadeF;
     private javax.swing.JTextField campoComplementoF;
     private javax.swing.JTextField campoCpfCliente6;
-    private javax.swing.JTextField campoCpfFuncionario;
+    private javax.swing.JFormattedTextField campoCpfFuncionario;
     private javax.swing.JTextField campoDataNascC6;
-    private javax.swing.JTextField campoDataNascF;
+    private javax.swing.JFormattedTextField campoDataNascF;
     private javax.swing.JTextField campoEnderecoC6;
     private javax.swing.JTextField campoEnderecoF;
     private javax.swing.JTextField campoNomeCliente6;
