@@ -1,5 +1,11 @@
 package Model;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Venda {
     int codigoVenda;
     String categoriaVenda;
@@ -8,13 +14,13 @@ public class Venda {
     double valorVenda;
     double valorTotalVenda;
     int codigoClienteVenda;
-    int dataVenda;
+    String dataVenda;
 
-    public int getDataVenda() {
+    public String getDataVenda() {
         return dataVenda;
     }
 
-    public void setDataVenda(int dataVenda) {
+    public void setDataVenda(String dataVenda) {
         this.dataVenda = dataVenda;
     }
 
@@ -73,6 +79,25 @@ public class Venda {
     public void setCodigoClienteVenda(int codigoClienteVenda) {
         this.codigoClienteVenda = codigoClienteVenda;
     }
-    
+     public String salvarV (){
+        try{
+            FileWriter fw = new FileWriter("Vendas.txt",true);
+            PrintWriter pw = new PrintWriter(fw);
+            pw.print("Cod :"+this.codigoVenda);
+            pw.print(" Categoria:"+ this.categoriaVenda);
+            pw.print(" Quantidade:"+this.quantidadeVenda);
+            pw.print(" Vendedor:"+this.vendedorVenda);
+            pw.print(" Valor Venda:"+this.valorVenda);
+            pw.println(" preço de compra:"+this.valorTotalVenda);
+            pw.print(" preço de compra:"+this.codigoClienteVenda);
+            pw.print(" Nome:"+this.dataVenda);
+            pw.flush();
+            pw.close();
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "Cadastrado com Sucesso";
+    }
 
 }

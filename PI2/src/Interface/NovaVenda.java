@@ -3,16 +3,20 @@ package Interface;
 
 import Controller.VendaController;
 import Controller.VendaTable;
+import Model.Venda;
+import javax.swing.JOptionPane;
 
 
 public class NovaVenda extends javax.swing.JFrame {
     private VendaController controller;
      private VendaTable tableController;
+     private Venda vendaModel;
 
     public NovaVenda() {
         initComponents();
         controller = new VendaController();
         tableController = new VendaTable();
+        vendaModel = new Venda();
     }
 
     /**
@@ -61,7 +65,7 @@ public class NovaVenda extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(223, 223, 223)
                 .addComponent(jLabel1)
-                .addContainerGap(285, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,7 +115,16 @@ public class NovaVenda extends javax.swing.JFrame {
             }
         });
 
-        campoDataVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        try {
+            campoDataVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        campoDataVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoDataVendaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -128,13 +141,13 @@ public class NovaVenda extends javax.swing.JFrame {
                                     .addComponent(codigoVenda))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(campoQntdV, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addComponent(campoCodigoV, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(categoriaVenda)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(campoCategoriaV, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(campoCategoriaV, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(campoQntdV, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(valorTotalVenda)
@@ -159,8 +172,8 @@ public class NovaVenda extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(campoCodigoClienteV, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                            .addComponent(campoVendedorV, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                            .addComponent(campoDataVenda))
+                            .addComponent(campoVendedorV)
+                            .addComponent(campoDataVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(125, 125, 125))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(btnConcluirV, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,7 +225,7 @@ public class NovaVenda extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(264, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,7 +241,7 @@ public class NovaVenda extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1052, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -237,11 +250,11 @@ public class NovaVenda extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 674, Short.MAX_VALUE)
+            .addGap(0, 569, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
@@ -254,6 +267,8 @@ public class NovaVenda extends javax.swing.JFrame {
     }//GEN-LAST:event_campoCodigoClienteVActionPerformed
 
     private void btnConcluirVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluirVActionPerformed
+            Venda venda =new Venda();
+    
     int codigoVenda;
     String categoriaVenda;
     int quantidadeVenda;
@@ -261,7 +276,7 @@ public class NovaVenda extends javax.swing.JFrame {
     double valorVenda;
     double valorTotalVenda;
     int codigoClienteVenda;
-    int dataVenda;
+    String dataVenda;
     
     codigoVenda = Integer.parseInt(campoCodigoV.getText());
     categoriaVenda = (campoCategoriaV.getText());
@@ -270,14 +285,46 @@ public class NovaVenda extends javax.swing.JFrame {
     valorVenda = Double.parseDouble(campoValorVenda.getText());
     valorTotalVenda = Double.parseDouble(campoValorTotalV.getText());
     codigoClienteVenda = Integer.parseInt (campoCodigoClienteV.getText());
-    dataVenda = Integer.parseInt (campoDataVenda.getText());
+    dataVenda = (campoDataVenda.getText());
     
     controller.salvarVenda(codigoVenda,categoriaVenda,quantidadeVenda,vendedorVenda,valorVenda,valorTotalVenda,codigoClienteVenda,dataVenda);
+    
+    venda.setCodigoVenda(codigoVenda);
+    venda.setCategoriaVenda(categoriaVenda);
+    venda.setQuantidadeVenda(quantidadeVenda);
+    venda.setVendedorVenda(vendedorVenda);
+    venda.setValorVenda(valorVenda);
+    venda.setValorTotalVenda(valorTotalVenda);
+    venda.setCodigoClienteVenda(codigoClienteVenda);
+    venda.setDataVenda(dataVenda);
+    
+     JOptionPane.showMessageDialog(null,venda.salvarV());
+     campoCodigoV.setText("");
+     campoCategoriaV.setText("");       
+     campoQntdV.setText("");
+     campoVendedorV.setText("");
+     campoValorVenda.setText("");
+     campoValorTotalV.setText(""); 
+     campoCodigoClienteV.setText("");  
+     campoDataVenda.setText("");       
+             
+      refreshTable();
+
+        
+    }                                          
+    public void refreshTable() {
+        jPanel1.invalidate();
+        jPanel1.repaint();
+     
     }//GEN-LAST:event_btnConcluirVActionPerformed
 
     private void btnBuscaVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaVActionPerformed
          new TabelaVenda().setVisible(true);
     }//GEN-LAST:event_btnBuscaVActionPerformed
+
+    private void campoDataVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDataVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoDataVendaActionPerformed
 
     /**
      * @param args the command line arguments

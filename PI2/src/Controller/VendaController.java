@@ -4,7 +4,8 @@ import Dao.VendaDAO;
 import Model.Venda;
 
 public class VendaController {
-    public static boolean salvarVenda(int codigoVenda,String categoriaVenda,int quantidadeVenda,String vendedorVenda,double valorVenda,double valorTotalVenda,int codigoClienteVenda, int dataVenda) {
+    public static boolean salvarVenda(int codigoVenda,String categoriaVenda,int quantidadeVenda,String vendedorVenda,
+            double valorVenda,double valorTotalVenda,int codigoClienteVenda, String dataVenda) {
         Venda cadastro = new Venda();
         
         cadastro.setCodigoVenda(codigoVenda);
