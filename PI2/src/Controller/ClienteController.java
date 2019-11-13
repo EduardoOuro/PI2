@@ -5,11 +5,12 @@ import Model.Cliente;
 
 public class ClienteController {
 
-    public static boolean salvarCliente(String nomeCliente, int cpfCliente, boolean sexoCliente,
-            int datanCliente, String enderecoCliente, int numeroECliente,
-            String complementoCliente, String cidadeCliente, String ufCliente, int telefoneCliente) {
+    public static boolean salvarCliente(int codCli,String nomeCliente, String cpfCliente, boolean sexoCliente,
+            String datanCliente, String enderecoCliente, int numeroECliente,
+            String complementoCliente, String cidadeCliente, String ufCliente, String telefoneCliente) {
         Cliente cadastro = new Cliente();
 
+        cadastro.setCodCli(codCli);
         cadastro.setNomeCliente(nomeCliente);
         cadastro.setCpfCliente(cpfCliente);
         cadastro.setSexoCliente(sexoCliente);

@@ -6,7 +6,7 @@ import javax.swing.table.AbstractTableModel;
 
 public class ClienteTable extends AbstractTableModel {
 
-    private String[] columnNames = {" Nome ", " CPF ", "Sexo", "Data de Nascimento", "Endereço ", " Número ", " Complemento ", " Cidade ", " UF ", " Telefone "};
+    private String[] columnNames = {" Codigo ", " Nome ", " CPF ", "Sexo", "Data de Nascimento", "Endereço ", " Número ", " Complemento ", " Cidade ", " UF ", " Telefone "};
 
     public int getColumnCount() {
         return 10;
@@ -27,31 +27,34 @@ public class ClienteTable extends AbstractTableModel {
         Cliente cadastroCliente;
 
         cadastroCliente = ClienteDAO.linha(row);
-        if (col == 0) {
-            return cadastroCliente.getNomeCliente();
+        if (col== 0){
+            return cadastroCliente.getCodCli();
         }
         if (col == 1) {
-            return cadastroCliente.getCpfCliente();
+            return cadastroCliente.getNomeCliente();
         }
         if (col == 2) {
-            return cadastroCliente.isSexoCliente();
+            return cadastroCliente.getCpfCliente();
         }
         if (col == 3) {
-            return cadastroCliente.getDatanCliente();
+            return cadastroCliente.isSexoCliente();
         }
         if (col == 4) {
-            return cadastroCliente.getEnderecoCliente();
+            return cadastroCliente.getDatanCliente();
         }
         if (col == 5) {
-            return cadastroCliente.getNumeroECliente();
+            return cadastroCliente.getEnderecoCliente();
         }
         if (col == 6) {
-            return cadastroCliente.getComplementoCliente();
+            return cadastroCliente.getNumeroECliente();
         }
         if (col == 7) {
-            return cadastroCliente.getCidadeCliente();
+            return cadastroCliente.getComplementoCliente();
         }
         if (col == 8) {
+            return cadastroCliente.getCidadeCliente();
+        }
+        if (col == 9) {
             return cadastroCliente.getUfCliente();
         }
         return cadastroCliente.getTelefoneCliente();

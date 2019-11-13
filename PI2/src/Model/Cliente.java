@@ -7,17 +7,26 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Cliente {
+
+    int CodCli;
     String nomeCliente;
-    int cpfCliente;
+    String cpfCliente;
     boolean sexoCliente;
-    int datanCliente;
+    String datanCliente;
     String enderecoCliente;
     int numeroECliente;
     String complementoCliente;
     String cidadeCliente;
     String ufCliente;
-    int telefoneCliente;
+    String telefoneCliente;
 
+    public int getCodCli() {
+        return CodCli;
+    }
+
+    public void setCodCli(int CodCli) {
+        this.CodCli = CodCli;
+    }
     public String getUfCliente() {
         return ufCliente;
     }
@@ -34,14 +43,14 @@ public class Cliente {
         this.nomeCliente = nomeCliente;
     }
 
-    public int getCpfCliente() {
+    public String getCpfCliente() {
         return cpfCliente;
     }
 
-    public void setCpfCliente(int cpfCliente) {
+    public void setCpfCliente(String cpfCliente) {
         this.cpfCliente = cpfCliente;
     }
-
+    
     public boolean isSexoCliente() {
         return sexoCliente;
     }
@@ -50,11 +59,11 @@ public class Cliente {
         this.sexoCliente = sexoCliente;
     }
 
-    public int getDatanCliente() {
+    public String getDatanCliente() {
         return datanCliente;
     }
 
-    public void setDatanCliente(int datanCliente) {
+    public void setDatanCliente(String datanCliente) {
         this.datanCliente = datanCliente;
     }
 
@@ -92,11 +101,11 @@ public class Cliente {
 
    
 
-    public int getTelefoneCliente() {
+    public String getTelefoneCliente() {
         return telefoneCliente;
     }
 
-    public void setTelefoneCliente(int telefoneCliente) {
+    public void setTelefoneCliente(String telefoneCliente) {
         this.telefoneCliente = telefoneCliente;
     }
     
@@ -104,10 +113,18 @@ public class Cliente {
         try{
             FileWriter fw = new FileWriter("Clientes.txt",true);
             PrintWriter pw = new PrintWriter(fw);
-            pw.println("Nome:"+this.nomeCliente);
-            pw.println("CPF:"+this.cpfCliente);
-            pw.println("Sexo:"+this.sexoCliente);
-            pw.println("Data de Nascimento:"+this.datanCliente);
+            pw.print("Nome:"+this.nomeCliente);
+            pw.print(" Sexo:"+this.sexoCliente);
+            pw.print(" CPF:"+this.cpfCliente);
+            pw.print(" Data de Nascimento:"+this.datanCliente);
+            pw.print(" endereço:"+ this.enderecoCliente);
+            pw.print(" numero :"+this.numeroECliente);
+            pw.print(" Complemento:"+this.complementoCliente);
+            pw.print(" Cidade:"+this.cidadeCliente);
+            pw.println(" UF:"+this.ufCliente);
+            pw.flush();
+            pw.close();
+            fw.close();
         } catch (IOException ex) {
             Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
         }

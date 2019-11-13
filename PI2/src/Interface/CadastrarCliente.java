@@ -48,6 +48,8 @@ public class CadastrarCliente extends javax.swing.JFrame {
         campoCpfCliente = new javax.swing.JFormattedTextField();
         campoDataNascC = new javax.swing.JFormattedTextField();
         campoTelefoneC = new javax.swing.JFormattedTextField();
+        codigoCli = new javax.swing.JLabel();
+        campoCodCli = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -67,6 +69,11 @@ public class CadastrarCliente extends javax.swing.JFrame {
         btnFemininoC.setBackground(new java.awt.Color(153, 153, 153));
         buttonGroup1.add(btnFemininoC);
         btnFemininoC.setText("Feminino");
+        btnFemininoC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFemininoCActionPerformed(evt);
+            }
+        });
 
         btnMasculinoC.setBackground(new java.awt.Color(153, 153, 153));
         buttonGroup1.add(btnMasculinoC);
@@ -101,7 +108,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
 
         enderecoCliente4.setText("Complemento:");
 
-        btnBuscarC.setText("Buscar");
+        btnBuscarC.setText("ver");
         btnBuscarC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarCActionPerformed(evt);
@@ -114,117 +121,131 @@ public class CadastrarCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        campoDataNascC.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        campoDataNascC.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM))));
+        campoDataNascC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoDataNascCActionPerformed(evt);
+            }
+        });
 
         try {
             campoTelefoneC.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        campoTelefoneC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoTelefoneCActionPerformed(evt);
+            }
+        });
+
+        codigoCli.setText("codigo");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(22, 22, 22)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(cidadeCliente)
-                                .addGap(18, 18, 18)
-                                .addComponent(campoCidadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(ufCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(comboUfC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(enderecoCliente)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoEnderecoC, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(btnSalvarC, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)))
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(telefoneCliente)
-                                            .addComponent(sexoCliente))
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                                .addGap(18, 18, Short.MAX_VALUE)
-                                                .addComponent(btnFemininoC)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btnMasculinoC)
-                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(campoTelefoneC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(enderecoCliente3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(campoEnderecoC1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(enderecoCliente4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(campoEnderecoC2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addContainerGap(80, Short.MAX_VALUE))))
+                                .addComponent(cidadeCliente)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoCidadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(36, 36, 36))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(btnSalvarC, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(124, 124, 124)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(campoTelefoneC, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(38, 38, 38)
                                 .addComponent(btnBuscarC, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addComponent(codigoCli)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(campoCodCli, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(nomeCliente)
-                            .addComponent(cpfCliente))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(dataNascCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoDataNascC, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(campoNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(cpfCliente)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(campoCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(sexoCliente)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btnFemininoC)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btnMasculinoC)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dataNascCliente)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(campoDataNascC, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addComponent(ufCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(20, 20, 20)
+                                    .addComponent(comboUfC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(27, 27, 27)
+                                    .addComponent(telefoneCliente))
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addComponent(enderecoCliente)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(campoEnderecoC, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(5, 5, 5)
+                                    .addComponent(enderecoCliente3)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(campoEnderecoC1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(enderecoCliente4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(campoEnderecoC2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 44, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nomeCliente)
                     .addComponent(campoNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(codigoCli)
+                    .addComponent(campoCodCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoDataNascC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dataNascCliente)
+                    .addComponent(campoCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cpfCliente)
                     .addComponent(sexoCliente)
                     .addComponent(btnFemininoC)
                     .addComponent(btnMasculinoC))
-                .addGap(20, 20, 20)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cpfCliente)
-                    .addComponent(dataNascCliente)
-                    .addComponent(campoCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoDataNascC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(enderecoCliente3)
-                    .addComponent(campoEnderecoC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(enderecoCliente)
                     .addComponent(campoEnderecoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoEnderecoC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(enderecoCliente3)
                     .addComponent(enderecoCliente4)
                     .addComponent(campoEnderecoC2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cidadeCliente)
-                    .addComponent(campoCidadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoTelefoneC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(telefoneCliente)
                     .addComponent(comboUfC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ufCliente)
-                    .addComponent(telefoneCliente)
-                    .addComponent(campoTelefoneC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
+                    .addComponent(campoCidadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cidadeCliente))
+                .addGap(32, 32, 32)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvarC)
                     .addComponent(btnBuscarC))
@@ -275,21 +296,21 @@ public class CadastrarCliente extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 880, Short.MAX_VALUE)
+            .addGap(0, 825, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(36, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 776, Short.MAX_VALUE)
+            .addGap(0, 608, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(180, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -297,31 +318,58 @@ public class CadastrarCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarCActionPerformed
-
+        Cliente clientes = new Cliente();
+        
+        int codCli;
         String nomeCliente;
-        int cpfCliente;
+        String cpfCliente;
         boolean sexoCliente = false;
-        int datanCliente = 0;
+        String datanCliente ;
         String enderecoCliente;
         int numeroECliente;
         String complementoCliente;
         String cidadeCliente;
         String ufCliente;
-        int telefoneCliente;
-
+        String telefoneCliente;
+        
+        codCli = Integer.parseInt(campoCodCli.getText());
         nomeCliente = (campoNomeCliente.getText());
-        cpfCliente = Integer.parseInt(campoCpfCliente.getText());
+        cpfCliente = (campoCpfCliente.getText());
+        datanCliente =(campoDataNascC.getText());
         enderecoCliente = (campoEnderecoC.getText());
         numeroECliente = Integer.parseInt(campoEnderecoC1.getText());
         complementoCliente = (campoEnderecoC2.getText());
         cidadeCliente = (campoCidadeCliente.getText());
         ufCliente = (comboUfC.getActionCommand());
-        telefoneCliente = Integer.parseInt(campoTelefoneC.getText());
+        telefoneCliente = (campoTelefoneC.getText());
 
-        controller.salvarCliente(nomeCliente, cpfCliente, sexoCliente, datanCliente, enderecoCliente, numeroECliente,
+        controller.salvarCliente(codCli,nomeCliente, cpfCliente, sexoCliente, datanCliente, enderecoCliente, numeroECliente,
                 complementoCliente, cidadeCliente, ufCliente, telefoneCliente);
         
-        JOptionPane.showMessageDialog(null,Cliente.salvarC());
+        clientes.setNomeCliente(nomeCliente);
+        clientes.setCpfCliente(cpfCliente);
+        clientes.setSexoCliente(sexoCliente);
+        clientes.setDatanCliente(datanCliente);
+        clientes.setEnderecoCliente(enderecoCliente);
+        clientes.setNumeroECliente(numeroECliente);
+        clientes.setComplementoCliente(complementoCliente);
+        clientes.setCidadeCliente(cidadeCliente);
+        clientes.setUfCliente(ufCliente);
+        clientes.setTelefoneCliente(telefoneCliente);
+        
+        JOptionPane.showMessageDialog(null,clientes.salvarC());
+        
+        campoCodCli.setText("");
+        campoNomeCliente.setText("");
+        campoCpfCliente.setText("");
+        campoDataNascC.setText("");
+        campoEnderecoC.setText("");
+        campoEnderecoC2.setText("");
+        campoCidadeCliente.setText("");
+        campoTelefoneC.setText("");
+        
+        
+        
         refreshTable();
 
     }//GEN-LAST:event_btnSalvarCActionPerformed
@@ -333,6 +381,19 @@ public class CadastrarCliente extends javax.swing.JFrame {
     private void btnBuscarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCActionPerformed
         new TabelaCliente().setVisible(true);
     }//GEN-LAST:event_btnBuscarCActionPerformed
+
+    private void btnFemininoCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFemininoCActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnFemininoCActionPerformed
+
+    private void campoDataNascCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDataNascCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoDataNascCActionPerformed
+
+    private void campoTelefoneCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoTelefoneCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoTelefoneCActionPerformed
     public void refreshTable() {
         jPanel2.invalidate();
         jPanel2.repaint();
@@ -380,6 +441,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvarC;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField campoCidadeCliente;
+    private javax.swing.JTextField campoCodCli;
     private javax.swing.JFormattedTextField campoCpfCliente;
     private javax.swing.JFormattedTextField campoDataNascC;
     private javax.swing.JTextField campoEnderecoC;
@@ -388,6 +450,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JTextField campoNomeCliente;
     private javax.swing.JFormattedTextField campoTelefoneC;
     private javax.swing.JLabel cidadeCliente;
+    private javax.swing.JLabel codigoCli;
     private javax.swing.JComboBox comboUfC;
     private javax.swing.JLabel cpfCliente;
     private javax.swing.JLabel dataNascCliente;
