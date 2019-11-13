@@ -5,7 +5,8 @@ import Model.Produto;
 
 public class ProdutoController {
 
-    public static boolean salvarProduto(int codigoProduto, int quantidadeProduto, String categoriaProduto, String nomeProduto, double precoCProduto, double precoVProduto, String marcaProduto) {
+    public static boolean salvarProduto(int codigoProduto, int quantidadeProduto, String categoriaProduto,
+            String nomeProduto, double precoCProduto, double precoVProduto, String marcaProduto) {
         Produto cadastro = new Produto();
         
         cadastro.setCodigoProduto(codigoProduto);

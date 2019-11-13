@@ -4,7 +4,9 @@ import Dao.FuncionarioDAO;
 import Model.Funcionario;
 
 public class FuncionarioController {
-     public static boolean salvarFuncionario(String nomeFuncionario, int cpfFuncionario, boolean sexoFuncionario, int datanFuncionario, String enderecoFuncionario, int numeroEFuncionario, String complementoFuncionario, String cidadeFuncionario, String ufFuncionario, int telefoneFuncionario) {
+     public static boolean salvarFuncionario(String nomeFuncionario, int cpfFuncionario, boolean sexoFuncionario,
+             int datanFuncionario, String enderecoFuncionario, int numeroEFuncionario, String complementoFuncionario,
+             String cidadeFuncionario, String ufFuncionario, int telefoneFuncionario) {
         Funcionario cadastro = new Funcionario();
 
         cadastro.setNomeFuncionario(nomeFuncionario);

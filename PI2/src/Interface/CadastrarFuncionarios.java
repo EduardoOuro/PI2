@@ -1,25 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interface;
 
 import Controller.FuncionarioController;
 import Controller.FuncionarioTable;
 
-/**
- *
- * @author emillyn.ecosta
- */
 public class CadastrarFuncionarios extends javax.swing.JFrame {
+
     private FuncionarioController controller;
     private FuncionarioTable tableController;
-    
 
-    /**
-     * Creates new form CadastrarFuncionários
-     */
     public CadastrarFuncionarios() {
         initComponents();
         controller = new FuncionarioController();
@@ -58,7 +46,6 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         btnBuscaCli6 = new javax.swing.JButton();
         btnExcluirC6 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel13 = new javax.swing.JPanel();
@@ -80,16 +67,16 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         comboUfF = new javax.swing.JComboBox();
         campoTelefoneF = new javax.swing.JTextField();
         btnSalvarF = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         numeroEFuncionario = new javax.swing.JLabel();
         campoNumeroEF = new javax.swing.JTextField();
         complementoFuncionario = new javax.swing.JLabel();
         campoComplementoF = new javax.swing.JTextField();
+        btnBuscarF = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jPanel11.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Cliente", 0, 0, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
         jPanel11.setToolTipText("");
         jPanel11.setName(""); // NOI18N
 
@@ -130,7 +117,7 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         ufCliente6.setText("UF:");
 
         comboUfC6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-        comboUfC6.setBorder(javax.swing.BorderFactory.createEtchedBorder(0));
+        comboUfC6.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         comboUfC6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboUfC6ActionPerformed(evt);
@@ -245,29 +232,21 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
 
         jPanel12.setBackground(new java.awt.Color(255, 102, 102));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/LOGO PI2 250.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(221, 221, 221)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(14, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel13.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Funcionários", 0, 0, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Funcionários", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
         jPanel13.setToolTipText("");
         jPanel13.setName(""); // NOI18N
 
@@ -296,7 +275,7 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         ufFuncionario.setText("UF:");
 
         comboUfF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-        comboUfF.setBorder(javax.swing.BorderFactory.createEtchedBorder(0));
+        comboUfF.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         comboUfF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboUfFActionPerformed(evt);
@@ -313,6 +292,13 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         numeroEFuncionario.setText("Número:");
 
         complementoFuncionario.setText("Complemento:");
+
+        btnBuscarF.setText("Buscar");
+        btnBuscarF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarFActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -360,8 +346,6 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
                                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addComponent(numeroEFuncionario)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel1)
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -379,8 +363,10 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
                                 .addComponent(campoComplementoF)))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(334, 334, 334)
+                .addGap(244, 244, 244)
                 .addComponent(btnSalvarF, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(btnBuscarF)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
@@ -402,6 +388,22 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
                         .addComponent(campoCpfFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(cpfFuncionario)))
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(numeroEFuncionario)
+                            .addComponent(campoNumeroEF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(complementoFuncionario)
+                            .addComponent(campoComplementoF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(comboUfF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ufFuncionario))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cidadeFuncionario)
+                            .addComponent(campoCidadeF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(63, Short.MAX_VALUE))
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel13Layout.createSequentialGroup()
@@ -414,47 +416,32 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(telefoneFuncionario)
                             .addComponent(campoTelefoneF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(numeroEFuncionario)
-                            .addComponent(campoNumeroEF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(complementoFuncionario)
-                            .addComponent(campoComplementoF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(comboUfF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ufFuncionario))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cidadeFuncionario)
-                            .addComponent(campoCidadeF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(14, 14, 14)))
-                .addComponent(btnSalvarF)
-                .addContainerGap(21, Short.MAX_VALUE))
+                            .addComponent(btnSalvarF)
+                            .addComponent(btnBuscarF))
+                        .addGap(22, 22, 22))))
         );
 
         jPanel14.setBackground(new java.awt.Color(255, 102, 102));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/LOGO PI2 250.png"))); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/LOGO PI2 250.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGap(245, 245, 245)
-                .addComponent(jLabel3)
-                .addContainerGap(527, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addContainerGap(261, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(227, 227, 227))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addContainerGap(232, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -472,7 +459,7 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -503,17 +490,35 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
     }//GEN-LAST:event_comboUfFActionPerformed
 
     private void btnSalvarFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFActionPerformed
-    String nomeFuncionario;
-    int cpfFuncionario;
-    boolean sexoFuncionario;
-    int datanFuncionario;
-    String enderecoFuncionario;
-    int numeroEFuncionario;
-    String complementoFuncionario;
-    String cidadeFuncionario;
-    String ufFuncionario;
-    int telefoneFuncionario;
+        String nomeFuncionario;
+        int cpfFuncionario;
+        boolean sexoFuncionario = false;
+        int datanFuncionario;
+        String enderecoFuncionario;
+        int numeroEFuncionario;
+        String complementoFuncionario;
+        String cidadeFuncionario;
+        String ufFuncionario;
+        int telefoneFuncionario;
+
+        nomeFuncionario = (campoNomeFuncionario.getText());
+        cpfFuncionario = Integer.parseInt(campoCpfFuncionario.getText());
+        datanFuncionario = Integer.parseInt(campoDataNascF.getText());
+        enderecoFuncionario = (campoEnderecoF.getText());
+        numeroEFuncionario = Integer.parseInt(campoNumeroEF.getText());
+        complementoFuncionario = (campoComplementoF.getText());
+        cidadeFuncionario = (campoCidadeF.getText());
+        ufFuncionario = (comboUfF.getActionCommand());
+        telefoneFuncionario = Integer.parseInt(campoTelefoneF.getText());
+
+        controller.salvarFuncionario(nomeFuncionario, cpfFuncionario, sexoFuncionario, datanFuncionario,
+                enderecoFuncionario, numeroEFuncionario, complementoFuncionario, cidadeFuncionario, ufFuncionario, telefoneFuncionario);
+
     }//GEN-LAST:event_btnSalvarFActionPerformed
+
+    private void btnBuscarFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarFActionPerformed
+         new TabelaFuncionario().setVisible(true);
+    }//GEN-LAST:event_btnBuscarFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -553,6 +558,7 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscaCli6;
+    private javax.swing.JButton btnBuscarF;
     private javax.swing.JButton btnCancelarC6;
     private javax.swing.JButton btnExcluirC6;
     private javax.swing.JRadioButton btnFemininoC6;
@@ -589,8 +595,6 @@ public class CadastrarFuncionarios extends javax.swing.JFrame {
     private javax.swing.JLabel enderecoCliente6;
     private javax.swing.JLabel enderecoFuncionario;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;

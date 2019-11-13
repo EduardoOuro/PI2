@@ -22,13 +22,10 @@ public class Menu extends javax.swing.JFrame {
         MenuConfig = new javax.swing.JMenu();
         MenuCliente = new javax.swing.JMenu();
         BtnNovoCli = new javax.swing.JMenuItem();
-        BtnAtualizarDCli = new javax.swing.JMenuItem();
         MenuProd = new javax.swing.JMenu();
         BtnNovoProd = new javax.swing.JMenuItem();
-        BtnAtualizarProd = new javax.swing.JMenuItem();
         MenuFuncionario = new javax.swing.JMenu();
         BtnNovoFunc = new javax.swing.JMenuItem();
-        BtnAtualizarFunc = new javax.swing.JMenuItem();
         MenuCons = new javax.swing.JMenu();
         MenuRelatorioVendas = new javax.swing.JMenu();
         MenuSair = new javax.swing.JMenu();
@@ -42,7 +39,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/LOGO PI2 250.png"))); // NOI18N
 
         BtnNovaVenda.setText("NOVA VENDA");
-        BtnNovaVenda.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        BtnNovaVenda.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         BtnNovaVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnNovaVendaActionPerformed(evt);
@@ -84,15 +81,6 @@ public class Menu extends javax.swing.JFrame {
         });
         MenuCliente.add(BtnNovoCli);
 
-        BtnAtualizarDCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/atualizar.png"))); // NOI18N
-        BtnAtualizarDCli.setText("Atualizar Dados Cliente");
-        BtnAtualizarDCli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAtualizarDCliActionPerformed(evt);
-            }
-        });
-        MenuCliente.add(BtnAtualizarDCli);
-
         MenuConfig.add(MenuCliente);
 
         MenuProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/novoproduto.png"))); // NOI18N
@@ -107,15 +95,6 @@ public class Menu extends javax.swing.JFrame {
         });
         MenuProd.add(BtnNovoProd);
 
-        BtnAtualizarProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/atualizar.png"))); // NOI18N
-        BtnAtualizarProd.setText("Atualizar Produto");
-        BtnAtualizarProd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAtualizarProdActionPerformed(evt);
-            }
-        });
-        MenuProd.add(BtnAtualizarProd);
-
         MenuConfig.add(MenuProd);
 
         MenuFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/funcionario.png"))); // NOI18N
@@ -129,15 +108,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         MenuFuncionario.add(BtnNovoFunc);
-
-        BtnAtualizarFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/atualizar.png"))); // NOI18N
-        BtnAtualizarFunc.setText("AtualizarFuncionário");
-        BtnAtualizarFunc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAtualizarFuncActionPerformed(evt);
-            }
-        });
-        MenuFuncionario.add(BtnAtualizarFunc);
 
         MenuConfig.add(MenuFuncionario);
 
@@ -188,14 +158,6 @@ public class Menu extends javax.swing.JFrame {
         new CadastrarCliente().setVisible(true);
     }//GEN-LAST:event_BtnNovoCliActionPerformed
 
-    private void BtnAtualizarDCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtualizarDCliActionPerformed
-
-    }//GEN-LAST:event_BtnAtualizarDCliActionPerformed
-
-    private void BtnAtualizarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtualizarProdActionPerformed
-
-    }//GEN-LAST:event_BtnAtualizarProdActionPerformed
-
     private void BtnNovoFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoFuncActionPerformed
         new CadastrarFuncionarios().setVisible(true);
     }//GEN-LAST:event_BtnNovoFuncActionPerformed
@@ -212,10 +174,6 @@ public class Menu extends javax.swing.JFrame {
     private void BtnNovoProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoProdActionPerformed
         new CadastrarProduto().setVisible(true);
     }//GEN-LAST:event_BtnNovoProdActionPerformed
-
-    private void BtnAtualizarFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtualizarFuncActionPerformed
-
-    }//GEN-LAST:event_BtnAtualizarFuncActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,9 +212,6 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem BtnAtualizarDCli;
-    private javax.swing.JMenuItem BtnAtualizarFunc;
-    private javax.swing.JMenuItem BtnAtualizarProd;
     private javax.swing.JButton BtnNovaVenda;
     private javax.swing.JMenuItem BtnNovoCli;
     private javax.swing.JMenuItem BtnNovoFunc;

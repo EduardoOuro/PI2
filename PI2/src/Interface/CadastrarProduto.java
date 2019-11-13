@@ -1,23 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interface;
 
+import Controller.ProdutoController;
+import Controller.ProdutoTable;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author emillyn.ecosta
- */
 public class CadastrarProduto extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastrarProd
-     */
+    private ProdutoController controller;
+    private ProdutoTable tableController;
+
     public CadastrarProduto() {
         initComponents();
+        controller = new ProdutoController();
+        tableController = new ProdutoTable();
     }
 
     /**
@@ -48,32 +43,33 @@ public class CadastrarProduto extends javax.swing.JFrame {
         btnSalvarP = new javax.swing.JButton();
         categoriaProduto = new javax.swing.JLabel();
         campoCategoriaP = new javax.swing.JTextField();
+        btnBuscarP = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel7.setBackground(new java.awt.Color(255, 102, 102));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/LOGO PI2 250.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/LOGO PI2 250.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(273, 273, 273)
+                .addGap(207, 207, 207)
                 .addComponent(jLabel1)
-                .addContainerGap(511, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(183, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(33, 33, 33))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Produtos", 0, 0, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Produtos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
 
         codigoProduto.setText("Código:");
 
@@ -121,6 +117,13 @@ public class CadastrarProduto extends javax.swing.JFrame {
 
         categoriaProduto.setText("Categoria:");
 
+        btnBuscarP.setText("Buscar");
+        btnBuscarP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarPActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -136,7 +139,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
                     .addComponent(campoCodigoP, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoCategoriaP, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoQuantidadeP, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(precoCompraP)
@@ -146,21 +149,24 @@ public class CadastrarProduto extends javax.swing.JFrame {
                         .addComponent(produtoP)
                         .addGap(18, 18, 18)
                         .addComponent(campoProdutoP, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(68, 68, 68)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
                         .addComponent(marcaProduto)
                         .addGap(18, 18, 18)
                         .addComponent(comboMarcaP, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
                         .addComponent(precoVendaP)
                         .addGap(18, 18, 18)
-                        .addComponent(campoPrecoVendaP, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(51, 51, 51))
+                        .addComponent(campoPrecoVendaP, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(76, 76, 76))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(271, 271, 271)
+                .addGap(230, 230, 230)
                 .addComponent(btnSalvarP, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(53, 53, 53)
+                .addComponent(btnBuscarP)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,9 +191,11 @@ public class CadastrarProduto extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(categoriaProduto)
                     .addComponent(campoCategoriaP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(btnSalvarP)
-                .addGap(40, 40, 40))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvarP)
+                    .addComponent(btnBuscarP))
+                .addGap(53, 53, 53))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -198,8 +206,8 @@ public class CadastrarProduto extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(75, Short.MAX_VALUE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 682, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,7 +248,24 @@ public class CadastrarProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_campoPrecoVendaPActionPerformed
 
     private void btnSalvarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarPActionPerformed
-        JOptionPane.showMessageDialog(null , "Produto Cadastrado!");
+        int codigoProduto;
+        int quantidadeProduto;
+        String categoriaProduto;
+        String nomeProduto;
+        double precoCProduto;
+        double precoVProduto;
+        String marcaProduto;
+        
+        codigoProduto = Integer.parseInt (campoCodigoP.getText());
+        quantidadeProduto = Integer.parseInt (campoQuantidadeP.getText());
+        categoriaProduto = (campoCategoriaP.getText());
+        nomeProduto = (campoProdutoP.getText());
+        precoCProduto = Double.parseDouble (campoPrecoCompraP.getText());
+        precoVProduto = Double.parseDouble (campoPrecoVendaP.getText());
+        marcaProduto = (comboMarcaP.getActionCommand());
+        
+        controller.salvarProduto (codigoProduto,quantidadeProduto,categoriaProduto,
+            nomeProduto,precoCProduto,precoVProduto,marcaProduto);
     }//GEN-LAST:event_btnSalvarPActionPerformed
 
     private void campoPrecoCompraPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoPrecoCompraPActionPerformed
@@ -250,6 +275,10 @@ public class CadastrarProduto extends javax.swing.JFrame {
     private void campoCodigoPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCodigoPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoCodigoPActionPerformed
+
+    private void btnBuscarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPActionPerformed
+         new TabelaProduto().setVisible(true);
+    }//GEN-LAST:event_btnBuscarPActionPerformed
 
     /**
      * @param args the command line arguments
@@ -288,6 +317,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarP;
     private javax.swing.JButton btnSalvarP;
     private javax.swing.JTextField campoCategoriaP;
     private javax.swing.JTextField campoCodigoP;

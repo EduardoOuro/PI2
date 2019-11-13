@@ -1,25 +1,19 @@
-
 package Interface;
 
 import Controller.ClienteController;
 import Controller.ClienteTable;
 
 public class CadastrarCliente extends javax.swing.JFrame {
-    
-     private ClienteController controller;
-     private ClienteTable tableController;
-    
 
-    /**
-     * Creates new form CadastrarCliente
-     */
+    private ClienteController controller;
+    private ClienteTable tableController;
+
     public CadastrarCliente() {
         initComponents();
         controller = new ClienteController();
-        tableController = new ClienteTable(); 
+        tableController = new ClienteTable();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -49,14 +43,14 @@ public class CadastrarCliente extends javax.swing.JFrame {
         campoEnderecoC1 = new javax.swing.JTextField();
         enderecoCliente4 = new javax.swing.JLabel();
         campoEnderecoC2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnBuscarC = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel5.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Cliente", 0, 0, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
         jPanel5.setToolTipText("");
         jPanel5.setName(""); // NOI18N
 
@@ -98,7 +92,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
         ufCliente.setText("UF:");
 
         comboUfC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-        comboUfC.setBorder(javax.swing.BorderFactory.createEtchedBorder(0));
+        comboUfC.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         comboUfC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboUfCActionPerformed(evt);
@@ -109,10 +103,10 @@ public class CadastrarCliente extends javax.swing.JFrame {
 
         enderecoCliente4.setText("Complemento:");
 
-        jButton1.setText("ver");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarC.setText("Buscar");
+        btnBuscarC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBuscarCActionPerformed(evt);
             }
         });
 
@@ -170,7 +164,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
                                         .addContainerGap(80, Short.MAX_VALUE))))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(38, 38, 38)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnBuscarC, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +215,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
                 .addGap(53, 53, 53)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvarC)
-                    .addComponent(jButton1))
+                    .addComponent(btnBuscarC))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -233,10 +227,10 @@ public class CadastrarCliente extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(265, 265, 265)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addGap(258, 258, 258))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,47 +286,48 @@ public class CadastrarCliente extends javax.swing.JFrame {
 
     private void btnSalvarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarCActionPerformed
 
-    String nomeCliente;
-    int cpfCliente;
-    boolean sexoCliente = false;
-    int datanCliente = 0;
-    String enderecoCliente;
-    int numeroECliente;
-    String complementoCliente;
-    String cidadeCliente;
-    String ufCliente;
-    int telefoneCliente;
-    
-    nomeCliente = (campoNomeCliente.getText());
-    cpfCliente = Integer.parseInt(campoCpfCliente.getText());
-    enderecoCliente = (campoEnderecoC.getText());
-    numeroECliente = Integer.parseInt(campoEnderecoC1.getText());
-    complementoCliente = (campoEnderecoC2.getText());
-    cidadeCliente = (campoCidadeCliente.getText());
-    ufCliente = (comboUfC.getActionCommand());
-    telefoneCliente = Integer.parseInt(campoTelefoneC.getText());
-    
-    controller.salvarCliente(nomeCliente,cpfCliente,sexoCliente,datanCliente,enderecoCliente,numeroECliente,
-            complementoCliente,cidadeCliente,ufCliente, telefoneCliente);
+        String nomeCliente;
+        int cpfCliente;
+        boolean sexoCliente = false;
+        int datanCliente = 0;
+        String enderecoCliente;
+        int numeroECliente;
+        String complementoCliente;
+        String cidadeCliente;
+        String ufCliente;
+        int telefoneCliente;
+
+        nomeCliente = (campoNomeCliente.getText());
+        cpfCliente = Integer.parseInt(campoCpfCliente.getText());
+        enderecoCliente = (campoEnderecoC.getText());
+        numeroECliente = Integer.parseInt(campoEnderecoC1.getText());
+        complementoCliente = (campoEnderecoC2.getText());
+        cidadeCliente = (campoCidadeCliente.getText());
+        ufCliente = (comboUfC.getActionCommand());
+        telefoneCliente = Integer.parseInt(campoTelefoneC.getText());
+
+        controller.salvarCliente(nomeCliente, cpfCliente, sexoCliente, datanCliente, enderecoCliente, numeroECliente,
+                complementoCliente, cidadeCliente, ufCliente, telefoneCliente);
         refreshTable();
-    
+
     }//GEN-LAST:event_btnSalvarCActionPerformed
 
     private void comboUfCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboUfCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboUfCActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-   new TabelaCliente().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnBuscarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCActionPerformed
+        new TabelaCliente().setVisible(true);
+    }//GEN-LAST:event_btnBuscarCActionPerformed
 
     private void campoDataNascCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDataNascCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoDataNascCActionPerformed
     public void refreshTable() {
-       jPanel2.invalidate();
-       jPanel2.repaint();
+        jPanel2.invalidate();
+        jPanel2.repaint();
     }
+
     /**
      * @param args the command line arguments
      */
@@ -369,6 +364,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarC;
     private javax.swing.JRadioButton btnFemininoC;
     private javax.swing.JRadioButton btnMasculinoC;
     private javax.swing.JButton btnSalvarC;
@@ -388,7 +384,6 @@ public class CadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JLabel enderecoCliente;
     private javax.swing.JLabel enderecoCliente3;
     private javax.swing.JLabel enderecoCliente4;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
@@ -399,5 +394,4 @@ public class CadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JLabel ufCliente;
     // End of variables declaration//GEN-END:variables
 
-    
 }
