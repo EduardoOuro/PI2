@@ -24,8 +24,6 @@ public class Menu extends javax.swing.JFrame {
         BtnNovoCli = new javax.swing.JMenuItem();
         MenuProd = new javax.swing.JMenu();
         BtnNovoProd = new javax.swing.JMenuItem();
-        MenuFuncionario = new javax.swing.JMenu();
-        BtnNovoFunc = new javax.swing.JMenuItem();
         MenuCons = new javax.swing.JMenu();
         MenuRelatorioVendas = new javax.swing.JMenu();
         MenuSair = new javax.swing.JMenu();
@@ -97,20 +95,6 @@ public class Menu extends javax.swing.JFrame {
 
         MenuConfig.add(MenuProd);
 
-        MenuFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/funcionario.png"))); // NOI18N
-        MenuFuncionario.setText("Funcionário");
-
-        BtnNovoFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/novofun.png"))); // NOI18N
-        BtnNovoFunc.setText("NovoFuncionário");
-        BtnNovoFunc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnNovoFuncActionPerformed(evt);
-            }
-        });
-        MenuFuncionario.add(BtnNovoFunc);
-
-        MenuConfig.add(MenuFuncionario);
-
         jMenuBar1.add(MenuConfig);
 
         MenuCons.setText("Cosultar");
@@ -157,10 +141,6 @@ public class Menu extends javax.swing.JFrame {
     private void BtnNovoCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoCliActionPerformed
         new CadastrarCliente().setVisible(true);
     }//GEN-LAST:event_BtnNovoCliActionPerformed
-
-    private void BtnNovoFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoFuncActionPerformed
-        new CadastrarFuncionarios().setVisible(true);
-    }//GEN-LAST:event_BtnNovoFuncActionPerformed
 
     private void MMenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MMenuSairActionPerformed
         new TelaInicial().setVisible(true);
@@ -214,13 +194,11 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnNovaVenda;
     private javax.swing.JMenuItem BtnNovoCli;
-    private javax.swing.JMenuItem BtnNovoFunc;
     private javax.swing.JMenuItem BtnNovoProd;
     private javax.swing.JMenuItem MMenuSair;
     private javax.swing.JMenu MenuCliente;
     private javax.swing.JMenu MenuConfig;
     private javax.swing.JMenu MenuCons;
-    private javax.swing.JMenu MenuFuncionario;
     private javax.swing.JMenu MenuProd;
     private javax.swing.JMenu MenuRelatorioVendas;
     private javax.swing.JMenu MenuSair;
