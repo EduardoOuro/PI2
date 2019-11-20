@@ -6,10 +6,10 @@ import javax.swing.table.AbstractTableModel;
 
 public class ClienteTable extends AbstractTableModel {
 
-    private String[] columnNames = {" Codigo ", " Nome ", " CPF ", "Sexo", "Data de Nascimento", "Endereço ", " Número ", " Complemento ", " Cidade ", " UF ", " Telefone "};
+    private String[] columnNames = {" Codigo ", " Nome ", " CPF ", "Sexo", "Data de Nascimento", "Endereço", " Cidade ", " UF ", " Telefone "};
 
     public int getColumnCount() {
-        return 10;
+        return 9;
     }
 
     public int getRowCount() {
@@ -28,7 +28,7 @@ public class ClienteTable extends AbstractTableModel {
 
         cadastroCliente = ClienteDAO.linha(row);
         if (col== 0){
-            return cadastroCliente.getCodCli();
+            return cadastroCliente.getCodigoCliente();
         }
         if (col == 1) {
             return cadastroCliente.getNomeCliente();
@@ -46,15 +46,9 @@ public class ClienteTable extends AbstractTableModel {
             return cadastroCliente.getEnderecoCliente();
         }
         if (col == 6) {
-            return cadastroCliente.getNumeroECliente();
-        }
-        if (col == 7) {
-            return cadastroCliente.getComplementoCliente();
-        }
-        if (col == 8) {
             return cadastroCliente.getCidadeCliente();
         }
-        if (col == 9) {
+        if (col == 7) {
             return cadastroCliente.getUfCliente();
         }
         return cadastroCliente.getTelefoneCliente();

@@ -6,10 +6,10 @@ import javax.swing.table.AbstractTableModel;
 
 public class VendaTable extends AbstractTableModel {
 
-    private String[] columnNames = {"Código", "Quantidade", "Categoria", "Vendedor", "Valor", "Valor Total", "Código Cliente", "Data"};
+    private String[] columnNames = {"Código Venda", "Quantidade", "Valor", "Valor Total", "Código Cliente", "Data","Produto"};
 
     public int getColumnCount() {
-        return 8;
+        return 7;
     }
 
     public int getRowCount() {
@@ -34,18 +34,15 @@ public class VendaTable extends AbstractTableModel {
             return cadastroVenda.getQuantidadeVenda();
         }
         if (col == 2) {
-            return cadastroVenda.getCategoriaVenda();
+            return cadastroVenda.getCodigoProduto();
         }
         if (col == 3) {
-            return cadastroVenda.getVendedorVenda();
-        }
-        if (col == 4) {
             return cadastroVenda.getValorVenda();
         }
-        if (col == 5) {
+        if (col == 4) {
             return cadastroVenda.getValorTotalVenda();
         }
-        if (col == 6) {
+        if (col == 5) {
             return cadastroVenda.getCodigoClienteVenda();
         }
         return cadastroVenda.getDataVenda();

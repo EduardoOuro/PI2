@@ -6,10 +6,10 @@ import javax.swing.table.AbstractTableModel;
 
 public class ProdutoTable extends AbstractTableModel {
 
-    private String[] columnNames = {"Código", "Quantidade", "Categoria", "Produto", "Preço de Compra", "Preço de Venda", "Marca"};
+    private String[] columnNames = {"Código", "Quantidade", "Produto", "Preço de Compra", "Preço de Venda"};
 
     public int getColumnCount() {
-        return 7;
+        return 5;
     }
 
     public int getRowCount() {
@@ -31,21 +31,15 @@ public class ProdutoTable extends AbstractTableModel {
             return cadastroProduto.getCodigoProduto();
         }
         if (col == 1) {
-            return cadastroProduto.getQuantidadeProduto();
+            return cadastroProduto.getQntdProduto();
         }
         if (col == 2) {
-            return cadastroProduto.getCategoriaProduto();
-        }
-        if (col == 3) {
             return cadastroProduto.getNomeProduto();
         }
-        if (col == 4) {
-            return cadastroProduto.getPrecoCProduto();
+        if (col == 3) {
+            return cadastroProduto.getPrecoCompra();
         }
-        if (col == 5) {
-            return cadastroProduto.getPrecoVProduto();
-        }
-        return cadastroProduto.getMarcaProduto();
+            return cadastroProduto.getPrecoVenda();
     }
     
     public Class getColumnClass(int c) {

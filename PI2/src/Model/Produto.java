@@ -8,12 +8,10 @@ import java.util.logging.Logger;
 
 public class Produto {
     int codigoProduto;
-    int quantidadeProduto;
-    String categoriaProduto;
+    int qntdProduto;
     String nomeProduto;
-    double precoCProduto;
-    double precoVProduto;
-    String marcaProduto;
+    double precoCompra;
+    double precoVenda;
 
     public int getCodigoProduto() {
         return codigoProduto;
@@ -23,21 +21,14 @@ public class Produto {
         this.codigoProduto = codigoProduto;
     }
 
-    public int getQuantidadeProduto() {
-        return quantidadeProduto;
+    public int getQntdProduto() {
+        return qntdProduto;
     }
 
-    public void setQuantidadeProduto(int quantidadeProduto) {
-        this.quantidadeProduto = quantidadeProduto;
+    public void setQntdProduto(int qntdProduto) {
+        this.qntdProduto = qntdProduto;
     }
 
-    public String getCategoriaProduto() {
-        return categoriaProduto;
-    }
-
-    public void setCategoriaProduto(String categoriaProduto) {
-        this.categoriaProduto = categoriaProduto;
-    }
 
     public String getNomeProduto() {
         return nomeProduto;
@@ -47,29 +38,22 @@ public class Produto {
         this.nomeProduto = nomeProduto;
     }
 
-    public double getPrecoCProduto() {
-        return precoCProduto;
+    public double getPrecoCompra() {
+        return precoCompra;
     }
 
-    public void setPrecoCProduto(double precoCProduto) {
-        this.precoCProduto = precoCProduto;
+    public void setPrecoCompra(double precoCompra) {
+        this.precoCompra = precoCompra;
     }
 
-    public double getPrecoVProduto() {
-        return precoVProduto;
+    public double getPrecoVenda() {
+        return precoVenda;
     }
 
-    public void setPrecoVProduto(double precoVProduto) {
-        this.precoVProduto = precoVProduto;
+    public void setPrecoVenda(double precoVenda) {
+        this.precoVenda = precoVenda;
     }
 
-    public String getMarcaProduto() {
-        return marcaProduto;
-    }
-
-    public void setMarcaProduto(String marcaProduto) {
-        this.marcaProduto = marcaProduto;
-    }
     
      public String salvarP (){
         try{
@@ -77,11 +61,9 @@ public class Produto {
             PrintWriter pw = new PrintWriter(fw);
             pw.print("Cod :"+this.codigoProduto);
             pw.print(" Nome:"+this.nomeProduto);
-            pw.print(" Marca:"+this.marcaProduto);
-            pw.print(" Quantidade:"+this.quantidadeProduto);
-            pw.print(" Categoria:"+ this.categoriaProduto);
-            pw.print(" preço de compra:"+this.precoCProduto);
-            pw.println(" Preço de venda:"+this.precoVProduto);
+            pw.print(" Quantidade:"+this.qntdProduto);
+            pw.print(" preço de compra:"+this.precoCompra);
+            pw.println(" Preço de venda:"+this.precoVenda);
             pw.flush();
             pw.close();
             fw.close();

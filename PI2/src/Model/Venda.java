@@ -7,21 +7,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Venda {
+
+    int codigoProduto;
     int codigoVenda;
-    String categoriaVenda;
     int quantidadeVenda;
-    String vendedorVenda;
     double valorVenda;
     double valorTotalVenda;
     int codigoClienteVenda;
-    String dataVenda;
+    int dataVenda;
 
-    public String getDataVenda() {
-        return dataVenda;
+    public int getCodigoProduto() {
+        return codigoProduto;
     }
 
-    public void setDataVenda(String dataVenda) {
-        this.dataVenda = dataVenda;
+    public void setCodigoProduto(int codigoProduto) {
+        this.codigoProduto = codigoProduto;
     }
 
     public int getCodigoVenda() {
@@ -32,12 +32,12 @@ public class Venda {
         this.codigoVenda = codigoVenda;
     }
 
-    public String getCategoriaVenda() {
-        return categoriaVenda;
+    public int getDataVenda() {
+        return dataVenda;
     }
 
-    public void setCategoriaVenda(String categoriaVenda) {
-        this.categoriaVenda = categoriaVenda;
+    public void setDataVenda(int dataVenda) {
+        this.dataVenda = dataVenda;
     }
 
     public int getQuantidadeVenda() {
@@ -46,14 +46,6 @@ public class Venda {
 
     public void setQuantidadeVenda(int quantidadeVenda) {
         this.quantidadeVenda = quantidadeVenda;
-    }
-
-    public String getVendedorVenda() {
-        return vendedorVenda;
-    }
-
-    public void setVendedorVenda(String vendedorVenda) {
-        this.vendedorVenda = vendedorVenda;
     }
 
     public double getValorVenda() {
@@ -79,18 +71,18 @@ public class Venda {
     public void setCodigoClienteVenda(int codigoClienteVenda) {
         this.codigoClienteVenda = codigoClienteVenda;
     }
-     public String salvarV (){
-        try{
-            FileWriter fw = new FileWriter("Vendas.txt",true);
+
+    public String salvarV() {
+        try {
+            FileWriter fw = new FileWriter("Vendas.txt", true);
             PrintWriter pw = new PrintWriter(fw);
-            pw.print("Cod :"+this.codigoVenda);
-            pw.print(" Categoria:"+ this.categoriaVenda);
-            pw.print(" Quantidade:"+this.quantidadeVenda);
-            pw.print(" Vendedor:"+this.vendedorVenda);
-            pw.print(" Valor Venda:"+this.valorVenda);
-            pw.println(" preço de compra:"+this.valorTotalVenda);
-            pw.print(" preço de compra:"+this.codigoClienteVenda);
-            pw.print(" Nome:"+this.dataVenda);
+            pw.print(" Código Produto:" + this.codigoProduto);
+            pw.print(" Código Venda:" + this.codigoVenda);
+            pw.print(" Quantidade:" + this.quantidadeVenda);
+            pw.print(" Valor Venda:" + this.valorVenda);
+            pw.println(" Valor Total:" + this.valorTotalVenda);
+            pw.print(" Código Cliente:" + this.codigoClienteVenda);
+            pw.print(" Nome:" + this.dataVenda);
             pw.flush();
             pw.close();
             fw.close();

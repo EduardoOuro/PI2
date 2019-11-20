@@ -8,24 +8,22 @@ import java.util.logging.Logger;
 
 public class Cliente {
 
-    int CodCli;
+    int codigoCliente;
     String nomeCliente;
     String cpfCliente;
     boolean sexoCliente;
     String datanCliente;
     String enderecoCliente;
-    int numeroECliente;
-    String complementoCliente;
     String cidadeCliente;
     String ufCliente;
     String telefoneCliente;
 
-    public int getCodCli() {
-        return CodCli;
+    public int getCodigoCliente() {
+        return codigoCliente;
     }
 
-    public void setCodCli(int CodCli) {
-        this.CodCli = CodCli;
+    public void setCodigoCliente(int CodigoCliente) {
+        this.codigoCliente = codigoCliente;
     }
     public String getUfCliente() {
         return ufCliente;
@@ -75,21 +73,6 @@ public class Cliente {
         this.enderecoCliente = enderecoCliente;
     }
 
-    public int getNumeroECliente() {
-        return numeroECliente;
-    }
-
-    public void setNumeroECliente(int numeroECliente) {
-        this.numeroECliente = numeroECliente;
-    }
-
-    public String getComplementoCliente() {
-        return complementoCliente;
-    }
-
-    public void setComplementoCliente(String complementoCliente) {
-        this.complementoCliente = complementoCliente;
-    }
 
     public String getCidadeCliente() {
         return cidadeCliente;
@@ -117,9 +100,7 @@ public class Cliente {
             pw.print(" Sexo:"+this.sexoCliente);
             pw.print(" CPF:"+this.cpfCliente);
             pw.print(" Data de Nascimento:"+this.datanCliente);
-            pw.print(" endereço:"+ this.enderecoCliente);
-            pw.print(" numero :"+this.numeroECliente);
-            pw.print(" Complemento:"+this.complementoCliente);
+            pw.print(" Endereço:"+ this.enderecoCliente);
             pw.print(" Cidade:"+this.cidadeCliente);
             pw.println(" UF:"+this.ufCliente);
             pw.flush();
@@ -130,4 +111,5 @@ public class Cliente {
         }
         return "Cadastrado com Sucesso";
     }    
+
 }
