@@ -14,7 +14,7 @@ public class Venda {
     double valorVenda;
     double valorTotalVenda;
     int codigoClienteVenda;
-    int dataVenda;
+    String dataVenda;
 
     public int getCodigoProduto() {
         return codigoProduto;
@@ -32,11 +32,11 @@ public class Venda {
         this.codigoVenda = codigoVenda;
     }
 
-    public int getDataVenda() {
+    public String getDataVenda() {
         return dataVenda;
     }
 
-    public void setDataVenda(int dataVenda) {
+    public void setDataVenda(String dataVenda) {
         this.dataVenda = dataVenda;
     }
 

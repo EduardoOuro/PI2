@@ -34,6 +34,7 @@ public class NovaVenda extends javax.swing.JFrame {
         btnNovo = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        btnVisualizar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
@@ -120,28 +121,41 @@ public class NovaVenda extends javax.swing.JFrame {
             }
         });
 
+        btnVisualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/buscar.png"))); // NOI18N
+        btnVisualizar.setText("Visualizar");
+        btnVisualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnVisualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnVisualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addComponent(btnNovo)
-                .addGap(48, 48, 48)
+                .addGap(18, 18, 18)
                 .addComponent(btnSalvar)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(btnCancelar)
-                .addGap(47, 47, 47))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnVisualizar)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnVisualizar)
                     .addComponent(btnSalvar)
                     .addComponent(btnCancelar)
                     .addComponent(btnNovo))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         codigoProduto.setText("Produto:");
@@ -216,6 +230,12 @@ public class NovaVenda extends javax.swing.JFrame {
         dataVenda.setText("Data Venda:");
 
         valorTotalVenda.setText("Valor Total:");
+
+        try {
+            campoDataVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -332,15 +352,16 @@ public class NovaVenda extends javax.swing.JFrame {
         double valorVenda;
         double valorTotalVenda;
         int codigoClienteVenda;
-        int dataVenda;
+        String dataVenda;
         codigoProduto = Integer.parseInt(campoCodigoProduto.getText());
         codigoVenda = Integer.parseInt(campoCodigoVenda.getText());
         quantidadeVenda = Integer.parseInt(campoQuantidadeVenda.getText());
         valorVenda = Double.parseDouble(campoValorVenda.getText());
         valorTotalVenda = Double.parseDouble(campoValorTotal.getText());
         codigoClienteVenda = Integer.parseInt(campoClienteVenda.getText());
-        dataVenda = Integer.parseInt(campoDataVenda.getText());
-        controller.salvarVenda(codigoProduto, codigoVenda, quantidadeVenda, valorVenda, (int) valorTotalVenda, codigoClienteVenda, dataVenda);
+        dataVenda = (campoDataVenda.getText());
+        controller.salvarVenda(codigoVenda, quantidadeVenda, valorVenda, valorTotalVenda,
+             codigoClienteVenda, dataVenda, codigoProduto);
 
         JOptionPane.showMessageDialog(null, "Venda Efetuada!");
 
@@ -357,6 +378,10 @@ public class NovaVenda extends javax.swing.JFrame {
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
         limpaTela();
     }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
+       new TabelaVenda().setVisible(true);
+    }//GEN-LAST:event_btnVisualizarActionPerformed
 
    private void limpaTela(){
        campoCodigoProduto.setText("");
@@ -408,6 +433,7 @@ public class NovaVenda extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton btnVisualizar;
     private javax.swing.JFormattedTextField campoClienteVenda;
     private javax.swing.JFormattedTextField campoCodigoProduto;
     private javax.swing.JFormattedTextField campoCodigoVenda;

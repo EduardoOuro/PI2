@@ -6,7 +6,7 @@ import Model.Venda;
 public class VendaController {
 
     public static boolean salvarVenda(int codigoVenda, int quantidadeVenda, double valorVenda, double valorTotalVenda,
-            int codigoClienteVenda, int dataVenda, int codigoProduto) {
+            int codigoClienteVenda, String dataVenda, int codigoProduto) {
         Venda cadastro = new Venda();
 
         cadastro.setCodigoVenda(codigoVenda);
@@ -21,11 +21,5 @@ public class VendaController {
         dao.addCadastro(cadastro);
         return true;
     }
-
-    public void salvarVenda() {
-        salvarVenda();
-    }
-
-   
 
 }
