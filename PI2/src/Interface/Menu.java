@@ -158,11 +158,11 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNovaVendaActionPerformed
 
     private void btnNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoClienteActionPerformed
-        new ClienteView().setVisible(true);
+        new ViewCliente().setVisible(true);
     }//GEN-LAST:event_btnNovoClienteActionPerformed
 
     private void btnCadastarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastarProdutoActionPerformed
-        new ProdutoView().setVisible(true);
+        new ViewProduto().setVisible(true);
     }//GEN-LAST:event_btnCadastarProdutoActionPerformed
 
     private void btnRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioActionPerformed

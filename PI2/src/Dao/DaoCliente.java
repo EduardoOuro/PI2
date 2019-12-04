@@ -28,8 +28,7 @@ public class DaoCliente extends ConnectionFactory {
                     + "'" + pModelCliente.getCepCliente() + "',"        
                     + "'" + pModelCliente.getUfCliente() + "',"
                     + "'" + pModelCliente.getTelefoneCliente() + "'"
-                    + ");"
-            );
+                    + ");");
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
