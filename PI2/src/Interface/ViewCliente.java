@@ -19,6 +19,7 @@ public class ViewCliente extends javax.swing.JFrame {
         initComponents();
         carregarCliente();
         setLocationRelativeTo(null);
+        habilitarDesabilitarCampos(false);
     }
 
     /**
@@ -73,6 +74,9 @@ public class ViewCliente extends javax.swing.JFrame {
 
         jLabel1.setText("Código:");
 
+        jtfCodigo.setEditable(false);
+        jtfCodigo.setEnabled(false);
+
         jLabel2.setText("Nome:");
 
         jtfNome.setText(" ");
@@ -125,8 +129,18 @@ public class ViewCliente extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jtCliente);
 
         jbCancelar.setText("Cancelar");
+        jbCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCancelarActionPerformed(evt);
+            }
+        });
 
         jbNovo.setText("Novo");
+        jbNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbNovoActionPerformed(evt);
+            }
+        });
 
         jbSalvar.setText("Salvar");
         jbSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -221,9 +235,9 @@ public class ViewCliente extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
                                 .addComponent(jbCancelar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(14, 14, 14)
                                 .addComponent(jbNovo)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jbSalvar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jbExcluir)
@@ -320,6 +334,7 @@ public class ViewCliente extends javax.swing.JFrame {
         if(controllerCliente.salvarClienteController(modelCliente)>0){
             JOptionPane.showMessageDialog(this,"Cliente cadastrato com sucesso!");
             this.carregarCliente();
+            limpaTela();
         }else{
             JOptionPane.showMessageDialog(this,"Erro ao cadastrar o cliente!");
         } 
@@ -335,6 +350,16 @@ public class ViewCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Erro ao excluir o cliente!");
         }  
     }//GEN-LAST:event_jbExcluirActionPerformed
+
+    private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
+        habilitarDesabilitarCampos(true);
+        limpaTela();
+    }//GEN-LAST:event_jbNovoActionPerformed
+
+    private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
+        habilitarDesabilitarCampos(false);
+        limpaTela();
+    }//GEN-LAST:event_jbCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -390,13 +415,40 @@ public class ViewCliente extends javax.swing.JFrame {
                 listaModelCliente.get(i).getEnderecoCliente(),
                 listaModelCliente.get(i).getBairroCliente(), 
                 listaModelCliente.get(i).getCidadeCliente(),
-                listaModelCliente.get(i).getCodigoCliente(),
                 listaModelCliente.get(i).getCepCliente(),
                 listaModelCliente.get(i).getUfCliente(),
                 listaModelCliente.get(i).getTelefoneCliente()
             });
         }
     }
+    
+    private void habilitarDesabilitarCampos(boolean condicao){
+        jtfCodigo.setEnabled(condicao);
+        jtfNome.setEnabled(condicao);
+        jtfSobrenome.setEnabled(condicao);
+        jtfCpf.setEnabled(condicao);
+        jtfEndereco.setEnabled(condicao);
+        jtfBairro.setEnabled(condicao);
+        jtfCidade.setEnabled(condicao);
+        jtfCep.setEnabled(condicao);
+        jtfUf.setEnabled(condicao);
+        jtfTelefone.setEnabled(condicao);
+    }
+    
+    private void limpaTela(){
+        jtfCodigo.setText("");
+        jtfNome.setText("");
+        jtfSobrenome.setText("");
+        jtfCpf.setText("");
+        jtfEndereco.setText("");
+        jtfBairro.setText("");
+        jtfCidade.setText("");
+        jtfCep.setText("");
+        jtfUf.setText("");
+        jtfTelefone.setText("");
+        
+    }
+        
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
