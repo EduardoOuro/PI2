@@ -1,3 +1,0 @@
-﻿
-Nome:emylin Sexo:false CPF:111.111.111-11 Data de Nascimento:11/11/1111 endereço:teste Street numero :11 Complemento:2A Cidade:Test City UF:comboBoxChanged
-Nome:isadora Sexo:false CPF:222.222.222-22 Data de Nascimento:12/01/2000 endereço:rua do teste 2 numero :22 Complemento:2B Cidade:Test City 2 UF:comboBoxChanged

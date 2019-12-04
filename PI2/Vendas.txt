@@ -1,2 +1,0 @@
-Cod :1 Categoria:1 Quantidade:1 Vendedor:1 Valor Venda:1.0 preço de compra:1.0
- preço de compra:1 Nome:11/11/1111

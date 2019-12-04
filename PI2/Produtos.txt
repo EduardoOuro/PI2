@@ -1,2 +1,0 @@
-﻿Cod :1 Nome:asdd Marca:comboBoxChanged Quantidade:12 Categoria:azul preço de compra:12.98 Preço de venda:45.98
-Cod :1 Nome:violão Marca:comboBoxChanged Quantidade:10 Categoria:prata preço de compra:1234.98 Preço de venda:2134.99
