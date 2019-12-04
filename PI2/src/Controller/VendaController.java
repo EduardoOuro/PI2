@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class VendaController {
 
+<<<<<<< HEAD
         /**
          * Método Estático Salvar Salvo os dados do cliente na memória ou no
          * banco de dados
@@ -68,3 +69,23 @@ public class VendaController {
         }
 
     }
+=======
+    public static boolean salvarVenda(int codigoVenda, int quantidadeVenda, double valorVenda, double valorTotalVenda,
+            int codigoClienteVenda, String dataVenda, int codigoProduto) {
+        Venda cadastro = new Venda();
+
+        cadastro.setCodigoVenda(codigoVenda);
+        cadastro.setQuantidadeVenda(quantidadeVenda);
+        cadastro.setValorVenda(valorVenda);
+        cadastro.setValorTotalVenda(valorTotalVenda);
+        cadastro.setCodigoClienteVenda(codigoClienteVenda);
+        cadastro.setDataVenda(dataVenda);
+        cadastro.setCodigoProduto(codigoProduto);
+
+        VendaDAO dao = new VendaDAO();
+        dao.addCadastro(cadastro);
+        return true;
+    }
+
+}
+>>>>>>> f5825d3fe62750b0422d586ff772a33e7ef004e3

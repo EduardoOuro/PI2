@@ -16,6 +16,7 @@ public class Venda {
 
     int cupomfiscal;
     int codigoProduto;
+<<<<<<< HEAD
     String produto;
     int quantidade;
     double valor;
@@ -27,6 +28,14 @@ public class Venda {
     public int getCupomfiscal() {
         return cupomfiscal;
     }
+=======
+    int codigoVenda;
+    int quantidadeVenda;
+    double valorVenda;
+    double valorTotalVenda;
+    int codigoClienteVenda;
+    String dataVenda;
+>>>>>>> f5825d3fe62750b0422d586ff772a33e7ef004e3
 
     public void setCupomfiscal(int cupomfiscal) {
         this.cupomfiscal = cupomfiscal;
@@ -44,6 +53,7 @@ public class Venda {
         return quantidade;
     }
 
+<<<<<<< HEAD
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
@@ -54,6 +64,14 @@ public class Venda {
 
     public void setValor(double valor) {
         this.valor = valor;
+=======
+    public String getDataVenda() {
+        return dataVenda;
+    }
+
+    public void setDataVenda(String dataVenda) {
+        this.dataVenda = dataVenda;
+>>>>>>> f5825d3fe62750b0422d586ff772a33e7ef004e3
     }
 
     public int getCodigoCliente() {
