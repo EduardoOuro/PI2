@@ -154,19 +154,19 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNovaVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovaVendaActionPerformed
-       new NovaVenda().setVisible(true);
+       new VendaView().setVisible(true);
     }//GEN-LAST:event_btnNovaVendaActionPerformed
 
     private void btnNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoClienteActionPerformed
-        new CadastrarCliente().setVisible(true);
+        new ClienteView().setVisible(true);
     }//GEN-LAST:event_btnNovoClienteActionPerformed
 
     private void btnCadastarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastarProdutoActionPerformed
-        new CadastrarProduto().setVisible(true);
+        new ProdutoView().setVisible(true);
     }//GEN-LAST:event_btnCadastarProdutoActionPerformed
 
     private void btnRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioActionPerformed
-        new TabelaVenda().setVisible(true);
+        
     }//GEN-LAST:event_btnRelatorioActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed

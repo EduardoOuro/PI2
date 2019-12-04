@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/Desktop/Aulas/2º%20Semestre/PI/PI2/PI2/src/Controller/VendaController.java</file>
-            <file>file:/C:/Users/DELL/Desktop/Aulas/2º%20Semestre/PI/PI2/PI2/src/Interface/NovaVenda.java</file>
-            <file>file:/C:/Users/DELL/Desktop/Aulas/2º%20Semestre/PI/PI2/PI2/src/Interface/Menu.java</file>
+            <file>file:/C:/Users/Ouro%20Conrado/Desktop/PI2/PI2/PI2/src/Interface/VendaView.java</file>
+            <file>file:/C:/Users/Ouro%20Conrado/Desktop/PI2/PI2/PI2/src/Dao/ProdutoDAO.java</file>
+            <file>file:/C:/Users/Ouro%20Conrado/Desktop/PI2/PI2/PI2/src/Dao/ClienteDAO.java</file>
+            <file>file:/C:/Users/Ouro%20Conrado/Desktop/PI2/PI2/PI2/src/Model/Produto.java</file>
+            <file>file:/C:/Users/Ouro%20Conrado/Desktop/PI2/PI2/PI2/src/Interface/ProdutoView.java</file>
+            <file>file:/C:/Users/Ouro%20Conrado/Desktop/PI2/PI2/PI2/src/Controller/ProdutoController.java</file>
         </group>
     </open-files>
 </project-private>
