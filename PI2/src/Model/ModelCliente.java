@@ -13,6 +13,7 @@ public class ModelCliente {
     String cidadeCliente;
     String cepCliente;
     String ufCliente;
+    String telefoneCliente;
 
     public String getSobrenomeCliente() {
         return sobrenomeCliente;
@@ -29,7 +30,6 @@ public class ModelCliente {
     public void setCpfCliente(String cpfCliente) {
         this.cpfCliente = cpfCliente;
     }
-    String telefoneCliente;
 
     public int getCodigoCliente() {
         return codigoCliente;

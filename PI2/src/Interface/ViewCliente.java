@@ -5,12 +5,17 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Model.ModelCliente;
+import java.util.regex.PatternSyntaxException;
+import javax.swing.RowFilter;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 public class ViewCliente extends javax.swing.JFrame {
 
     ArrayList<ModelCliente> listaModelCliente = new ArrayList<>();
     ControllerCliente controllerCliente = new ControllerCliente();
     ModelCliente modelCliente = new ModelCliente();
+    String salvarAlterar;
 
     /**
      * Creates new form ViewCliente
@@ -67,9 +72,10 @@ public class ViewCliente extends javax.swing.JFrame {
 
         jLabel8.setText("jLabel8");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Clientes");
 
-        jPanel1.setToolTipText("Cadastrar Clientes");
+        jPanel1.setToolTipText("");
         jPanel1.setName("Cadastrar Clientes"); // NOI18N
 
         jLabel1.setText("Código:");
@@ -157,12 +163,22 @@ public class ViewCliente extends javax.swing.JFrame {
         });
 
         jbAlterar.setText("Alterar");
+        jbAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAlterarActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("Pesquisar:");
 
         jtfPesquisar.setText(" ");
 
         jbPesquisar.setText("Pesquisar");
+        jbPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbPesquisarActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("CPF:");
 
@@ -321,45 +337,68 @@ public class ViewCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
-        modelCliente.setNomeCliente(this.jtfNome.getText());
-        modelCliente.setSobrenomeCliente(this.jtfSobrenome.getText());
-        modelCliente.setCpfCliente(this.jtfCpf.getText());
-        modelCliente.setEnderecoCliente(this.jtfEndereco.getText());
-        modelCliente.setBairroCliente(this.jtfBairro.getText());
-        modelCliente.setCidadeCliente(this.jtfCidade.getText());
-        modelCliente.setCepCliente(this.jtfCep.getText());
-        modelCliente.setUfCliente(this.jtfUf.getText());
-        modelCliente.setTelefoneCliente(this.jtfTelefone.getText());
-        
-        if(controllerCliente.salvarClienteController(modelCliente)>0){
-            JOptionPane.showMessageDialog(this,"Cliente cadastrato com sucesso!");
-            this.carregarCliente();
-            limpaTela();
-        }else{
-            JOptionPane.showMessageDialog(this,"Erro ao cadastrar o cliente!");
-        } 
+        if (salvarAlterar.equals("salvar")) {
+            this.salvarCliente();
+        } else if (salvarAlterar.equals("alterar")) {
+            this.alterarCliente();
+        }
     }//GEN-LAST:event_jbSalvarActionPerformed
 
     private void jbExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirActionPerformed
         int linha = jtCliente.getSelectedRow();
-        int codigoC = (int) jtCliente.getValueAt(linha,0);
-        if(controllerCliente.excluirClienteController(codigoC)){
-            JOptionPane.showMessageDialog(this,"Cliente excluido com sucesso!");
+        int codigoC = (int) jtCliente.getValueAt(linha, 0);
+        if (controllerCliente.excluirClienteController(codigoC)) {
+            JOptionPane.showMessageDialog(this, "Cliente excluido com sucesso!");
             this.carregarCliente();
-        }else{
-            JOptionPane.showMessageDialog(this,"Erro ao excluir o cliente!");
-        }  
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro ao excluir o cliente!", "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jbExcluirActionPerformed
 
     private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
         habilitarDesabilitarCampos(true);
         limpaTela();
+        salvarAlterar = "salvar";
     }//GEN-LAST:event_jbNovoActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
         habilitarDesabilitarCampos(false);
         limpaTela();
     }//GEN-LAST:event_jbCancelarActionPerformed
+
+    private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
+        int linha = this.jtCliente.getSelectedRow();
+        salvarAlterar = "alterar";
+        try {
+            int codigoCliente = (int) this.jtCliente.getValueAt(linha, 0);
+
+            //recuperar dados do banco
+            modelCliente = controllerCliente.retornarClienteController(codigoCliente);
+            //setar na interface
+            this.jtfCodigo.setText(String.valueOf(modelCliente.getCodigoCliente()));
+            this.jtfNome.setText(modelCliente.getNomeCliente());
+            this.jtfSobrenome.setText(modelCliente.getSobrenomeCliente());
+            this.jtfCpf.setText(modelCliente.getCpfCliente());
+            this.jtfEndereco.setText(modelCliente.getEnderecoCliente());
+            this.jtfBairro.setText(modelCliente.getBairroCliente());
+            this.jtfCidade.setText(modelCliente.getCidadeCliente());
+            this.jtfCep.setText(modelCliente.getCepCliente());
+            this.jtfUf.setText(modelCliente.getUfCliente());
+            this.jtfTelefone.setText(modelCliente.getTelefoneCliente());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Código Inválido!", "ERRO", JOptionPane.ERROR_MESSAGE);
+
+        }
+    }//GEN-LAST:event_jbAlterarActionPerformed
+
+    private void jbPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisarActionPerformed
+        //DefaultTableModel modelo = (DefaultTableModel) jtCliente.getModel();
+        //final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(modelo);
+        //jtCliente.setRowSorter(sorter);
+        //String filtro = jtfPesquisar.getText().toUpperCase();
+
+
+    }//GEN-LAST:event_jbPesquisarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -413,7 +452,7 @@ public class ViewCliente extends javax.swing.JFrame {
                 listaModelCliente.get(i).getSobrenomeCliente(),
                 listaModelCliente.get(i).getCpfCliente(),
                 listaModelCliente.get(i).getEnderecoCliente(),
-                listaModelCliente.get(i).getBairroCliente(), 
+                listaModelCliente.get(i).getBairroCliente(),
                 listaModelCliente.get(i).getCidadeCliente(),
                 listaModelCliente.get(i).getCepCliente(),
                 listaModelCliente.get(i).getUfCliente(),
@@ -421,8 +460,8 @@ public class ViewCliente extends javax.swing.JFrame {
             });
         }
     }
-    
-    private void habilitarDesabilitarCampos(boolean condicao){
+
+    private void habilitarDesabilitarCampos(boolean condicao) {
         jtfCodigo.setEnabled(condicao);
         jtfNome.setEnabled(condicao);
         jtfSobrenome.setEnabled(condicao);
@@ -434,8 +473,8 @@ public class ViewCliente extends javax.swing.JFrame {
         jtfUf.setEnabled(condicao);
         jtfTelefone.setEnabled(condicao);
     }
-    
-    private void limpaTela(){
+
+    private void limpaTela() {
         jtfCodigo.setText("");
         jtfNome.setText("");
         jtfSobrenome.setText("");
@@ -446,9 +485,50 @@ public class ViewCliente extends javax.swing.JFrame {
         jtfCep.setText("");
         jtfUf.setText("");
         jtfTelefone.setText("");
-        
+
     }
-        
+
+    public void salvarCliente() {
+        modelCliente.setNomeCliente(this.jtfNome.getText());
+        modelCliente.setSobrenomeCliente(this.jtfSobrenome.getText());
+        modelCliente.setCpfCliente(this.jtfCpf.getText());
+        modelCliente.setEnderecoCliente(this.jtfEndereco.getText());
+        modelCliente.setBairroCliente(this.jtfBairro.getText());
+        modelCliente.setCidadeCliente(this.jtfCidade.getText());
+        modelCliente.setCepCliente(this.jtfCep.getText());
+        modelCliente.setUfCliente(this.jtfUf.getText());
+        modelCliente.setTelefoneCliente(this.jtfTelefone.getText());
+
+        if (controllerCliente.salvarClienteController(modelCliente) > 0) {
+            JOptionPane.showMessageDialog(this, "Cliente cadastrato com sucesso!");
+            this.carregarCliente();
+            limpaTela();
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro ao cadastrar o cliente!", "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+
+    public void alterarCliente() {
+        modelCliente.setNomeCliente(this.jtfNome.getText());
+        modelCliente.setSobrenomeCliente(this.jtfSobrenome.getText());
+        modelCliente.setCpfCliente(this.jtfCpf.getText());
+        modelCliente.setEnderecoCliente(this.jtfEndereco.getText());
+        modelCliente.setBairroCliente(this.jtfBairro.getText());
+        modelCliente.setCidadeCliente(this.jtfCidade.getText());
+        modelCliente.setCepCliente(this.jtfCep.getText());
+        modelCliente.setUfCliente(this.jtfUf.getText());
+        modelCliente.setTelefoneCliente(this.jtfTelefone.getText());
+
+        if (controllerCliente.alterarClienteController(modelCliente)) {
+            JOptionPane.showMessageDialog(this, "Cliente alterado com sucesso!");
+            this.carregarCliente();
+            limpaTela();
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro ao alterar o cliente!", "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

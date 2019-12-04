@@ -236,23 +236,17 @@ public class ConnectionFactory {
         return user;
     }
 
-    /**
-     * @param usuario the usuario to set
-     */
+  
     public void setUser(String user) {
         this.user = user;
     }
 
-    /**
-     * @return the senha
-     */
+    
     public String getPassword() {
         return password;
     }
 
-    /**
-     * @param senha the senha to set
-     */
+   
     public void setPassword(String pass) {
         this.password = password;
     }
