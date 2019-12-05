@@ -1,6 +1,4 @@
-
 package Model;
-
 
 public class ModelCliente {
 
@@ -9,11 +7,11 @@ public class ModelCliente {
     String sobrenomeCliente;
     String cpfCliente;
     String enderecoCliente;
-    String bairroCliente;
     String cidadeCliente;
     String cepCliente;
     String ufCliente;
-    String telefoneCliente;
+    String celularCliente;
+    
 
     public String getSobrenomeCliente() {
         return sobrenomeCliente;
@@ -30,6 +28,15 @@ public class ModelCliente {
     public void setCpfCliente(String cpfCliente) {
         this.cpfCliente = cpfCliente;
     }
+
+    public String getCelularCliente() {
+        return celularCliente;
+    }
+
+    public void setCelularCliente(String celularCliente) {
+        this.celularCliente = celularCliente;
+    }
+    
 
     public int getCodigoCliente() {
         return codigoCliente;
@@ -55,13 +62,7 @@ public class ModelCliente {
         this.enderecoCliente = enderecoCliente;
     }
 
-    public String getBairroCliente() {
-        return bairroCliente;
-    }
-
-    public void setBairroCliente(String bairroCliente) {
-        this.bairroCliente = bairroCliente;
-    }
+  
 
     public String getCidadeCliente() {
         return cidadeCliente;
@@ -79,13 +80,7 @@ public class ModelCliente {
         this.ufCliente = ufCliente;
     }
 
-    public String getTelefoneCliente() {
-        return telefoneCliente;
-    }
-
-    public void setTelefoneCliente(String telefoneCliente) {
-        this.telefoneCliente = telefoneCliente;
-    }
+   
 
     public String getCepCliente() {
         return cepCliente;
@@ -96,6 +91,3 @@ public class ModelCliente {
     }
     
 }
-
-    
-

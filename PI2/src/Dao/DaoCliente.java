@@ -16,18 +16,17 @@ public class DaoCliente extends ConnectionFactory {
         try {
             this.conectar();
             return this.insertSQL("INSERT INTO cliente("
-                    + "nome_cli,sobrenome_cli,cpf_cli, endereco_cli,bairro_cli,"
-                    + " cidade_cli,cep_cli,uf_cli,telefone_cli)"
+                    + "nome_cli,sobrenome_cli,cpf_cli, endereco_cli,"
+                    + " cidade_cli,cep_cli,uf_cli,celular_cli)"
                     + "VALUES("
                     + "'" + pModelCliente.getNomeCliente() + "',"
                     + "'" + pModelCliente.getSobrenomeCliente() + "',"
                     + "'" + pModelCliente.getCpfCliente() + "',"        
                     + "'" + pModelCliente.getEnderecoCliente() + "',"
-                    + "'" + pModelCliente.getBairroCliente() + "',"
                     + "'" + pModelCliente.getCidadeCliente() + "',"
                     + "'" + pModelCliente.getCepCliente() + "',"        
                     + "'" + pModelCliente.getUfCliente() + "',"
-                    + "'" + pModelCliente.getTelefoneCliente() + "'"
+                    + "'" + pModelCliente.getCelularCliente() + "'"
                     + ");");
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,6 +34,28 @@ public class DaoCliente extends ConnectionFactory {
         } finally {
             this.fecharConexao();
         }
+//        try {
+//            this.conectar();
+//            //cliente(nome_cli,sobrenome_cli,cpf_cli,endereco_cli,cidade_cli,cep_cli,uf_cli,celular_cli)
+//            return this.insertSQL("INSERT INTO cliente("
+//                    + "nome_cli,sobrenome_cli,cpf_cli,endereco_cli,"
+//                    + "cidade_cli,cep_cli,uf_cli,celular_cli)"
+//                    + "VALUES("
+//                    + "'" + pModelCliente.getNomeCliente() + "',"
+//                    + "'" + pModelCliente.getSobrenomeCliente() + "',"
+//                    + "'" + pModelCliente.getCpfCliente() + "',"        
+//                    + "'" + pModelCliente.getEnderecoCliente() + "',"
+//                    + "'" + pModelCliente.getCidadeCliente() + "',"
+//                    + "'" + pModelCliente.getCepCliente() + "',"        
+//                    + "'" + pModelCliente.getUfCliente() + "',"
+//                    + "'" + pModelCliente.getCelularCliente() + "'"
+//                    + ");");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return 0;
+//        } finally {
+//            this.fecharConexao();
+//        }
     }
 
     /**
@@ -67,14 +88,13 @@ public class DaoCliente extends ConnectionFactory {
             this.conectar();
             return this.executarUpdateDeleteSQL("UPDATE cliente SET "
                     + "nome_cli = '" + pModelCliente.getNomeCliente() + "',"
-                    + "sobrenome_cli = '" + pModelCliente.getSobrenomeCliente() + "',"
+                    + "sobrenome_cli = '" + pModelCliente.getSobrenomeCliente() + "',"        
                     + "cpf_cli = '" + pModelCliente.getCpfCliente() + "',"        
                     + "endereco_cli = '" + pModelCliente.getEnderecoCliente() + "',"
-                    + "bairro_cli = '" + pModelCliente.getBairroCliente() + "',"
                     + "cidade_cli = '" + pModelCliente.getCidadeCliente() + "',"
                     + "cep_cli = '" + pModelCliente.getCepCliente() + "',"
                     + "uf_cli = '" + pModelCliente.getUfCliente() + "',"
-                    + "telefone_cli = '" + pModelCliente.getTelefoneCliente() + "'"
+                    + "celular_cli = '" + pModelCliente.getCelularCliente() + "'"
                     + " WHERE cod_cli = '" + pModelCliente.getCodigoCliente() + "'");
 
         } catch (Exception e) {
@@ -97,9 +117,8 @@ public class DaoCliente extends ConnectionFactory {
         try {
             this.conectar();
             this.executarSQL("SELECT "
-                    + "cod_cli, nome_cli,sobrenome_cli,cpf_cli,"
-                    + " endereco_cli,bairro_cli,"
-                    + " cidade_cli, cep_cli,uf_cli, telefone_cli"
+                    + "cod_cli, nome_cli, endereco_cli,"
+                    + " cidade_cli, cep_cli,uf_cli, celular_cli"
                     + " FROM cliente WHERE cod_cli = " + pCodigoCliente);
             while (this.getResultSet().next()) {
                 modelCliente.setCodigoCliente(this.getResultSet().getInt("cod_cli"));
@@ -107,11 +126,10 @@ public class DaoCliente extends ConnectionFactory {
                 modelCliente.setSobrenomeCliente(this.getResultSet().getString("sobrenome_cli"));
                 modelCliente.setCpfCliente(this.getResultSet().getString("cpf_cli"));
                 modelCliente.setEnderecoCliente(this.getResultSet().getString("endereco_cli"));
-                modelCliente.setBairroCliente(this.getResultSet().getString("bairro_cli"));
                 modelCliente.setCidadeCliente(this.getResultSet().getString("cidade_cli"));
                 modelCliente.setCepCliente(this.getResultSet().getString("cep_cli"));
                 modelCliente.setUfCliente(this.getResultSet().getString("uf_cli"));
-                modelCliente.setTelefoneCliente(this.getResultSet().getString("telefone_cli"));
+                modelCliente.setCelularCliente(this.getResultSet().getString("celular_cli"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -132,23 +150,21 @@ public class DaoCliente extends ConnectionFactory {
         try {
             this.conectar();
             this.executarSQL("SELECT "
-                    + "cod_cli, nome_cli,sobrenome_cli, cpf_cli,"
-                    + " endereco_cli,bairro_cli,"
-                    + "cidade_cli, cep_cli,uf_cli,telefone_cli "
+                    + "cod_cli,nome_cli,sobrenome_cli,cpf_cli,endereco_cli,"
+                    + "cidade_cli,cep_cli,uf_cli,celular_cli "
                     + "FROM cliente;");
 
             while (this.getResultSet().next()) {
+                modelCliente = new ModelCliente();
                 modelCliente.setCodigoCliente(this.getResultSet().getInt("cod_cli"));
                 modelCliente.setNomeCliente(this.getResultSet().getString("nome_cli"));
                 modelCliente.setSobrenomeCliente(this.getResultSet().getString("sobrenome_cli"));
                 modelCliente.setCpfCliente(this.getResultSet().getString("cpf_cli"));
                 modelCliente.setEnderecoCliente(this.getResultSet().getString("endereco_cli"));
-                modelCliente.setBairroCliente(this.getResultSet().getString("bairro_cli"));
                 modelCliente.setCidadeCliente(this.getResultSet().getString("cidade_cli"));
                 modelCliente.setCepCliente(this.getResultSet().getString("cep_cli"));
                 modelCliente.setUfCliente(this.getResultSet().getString("uf_cli"));
-                modelCliente.setTelefoneCliente(this.getResultSet().getString("telefone_cli"));
-               
+                modelCliente.setCelularCliente(this.getResultSet().getString("celular_cli"));
                 listaModelCliente.add(modelCliente);
             }
 
